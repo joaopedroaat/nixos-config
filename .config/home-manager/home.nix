@@ -37,7 +37,12 @@
   programs.home-manager.enable = true;
 
   # Fish shell
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    shellInit = ''
+      set -U fish_greeting
+    '';
+  };
 
   programs.git = {
     enable = true;
