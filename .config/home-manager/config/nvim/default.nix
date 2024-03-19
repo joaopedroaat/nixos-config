@@ -46,9 +46,14 @@
 
     keymaps = [
       {
-        key = "<leader>e";
+        key = "<leader>o";
         action = "<cmd>Oil --float .<CR>";
         options = {desc = "Find Oil";};
+      }
+      {
+        key = "<leader>e";
+        action = "<cmd>Neotree toggle<CR>";
+        options = {desc = "Open Neotree";};
       }
       {
         key = "<leader>gg";
@@ -65,7 +70,19 @@
 
     extraPlugins = with pkgs.vimPlugins; [
       lazygit-nvim
+      dressing-nvim
+      neo-tree-nvim
     ];
+
+    plugins.mini = {
+      enable = true;
+      modules = {
+        animate.enable = true;
+        pairs.enable = true;
+        move.enable = true;
+        comment.enable = true;
+      };
+    };
 
     plugins.conform-nvim = {
       enable = true;
