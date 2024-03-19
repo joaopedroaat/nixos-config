@@ -5,6 +5,7 @@
     ./xdg.nix
     ./fish.nix
     ./ui
+    ./ssh.nix
   ];
 
   home.username = "joaopedroaat";
