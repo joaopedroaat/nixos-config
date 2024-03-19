@@ -29,6 +29,8 @@
     pkgs.prettierd
     pkgs.yamlfmt
     pkgs.alejandra
+    # Lazygit
+    pkgs.lazygit
   ];
 
   home.file = {

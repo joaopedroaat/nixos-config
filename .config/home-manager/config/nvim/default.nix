@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   programs.nixvim = {
     enable = true;
 
@@ -50,6 +50,11 @@
         action = "<cmd>Oil --float .<CR>";
         options = {desc = "Find Oil";};
       }
+      {
+        key = "<leader>gg";
+        action = "<cmd>LazyGit<CR>";
+        options = {desc = "Open LazyGit";};
+      }
     ];
 
     # Plugins
@@ -57,6 +62,10 @@
       lualine.enable = true;
       oil.enable = true;
     };
+
+    extraPlugins = with pkgs.vimPlugins; [
+      lazygit-nvim
+    ];
 
     plugins.conform-nvim = {
       enable = true;
