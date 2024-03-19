@@ -36,6 +36,9 @@
 
   programs.home-manager.enable = true;
 
+  # Fish shell
+  programs.fish.enable = true;
+
   programs.git = {
     enable = true;
     userName = "joaopedroaat";
