@@ -1,14 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
-
-{
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+{pkgs, ...}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -53,45 +50,45 @@
   users.users.joaopedroaat = {
     isNormalUser = true;
     description = "João Pedro Almeida de Andrade Tenório";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
   };
 
   # Fonts
   fonts.packages = with pkgs; [
-  	noto-fonts
-	  noto-fonts-cjk
-	  noto-fonts-emoji
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
 
     font-awesome
 
     # NerdFonts
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     # Stow
-     pkgs.stow
-     # Home Manager
-     pkgs.home-manager
-     # Status bar
-     pkgs.waybar
-     (pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; }))
-     # Notify Deamon
-     pkgs.dunst
-     libnotify
-     # Wallpaper Deamon
-     swww
-     # Terminal emulator
-     kitty
-     # App Launcher
-     rofi-wayland
-     # Text Editor
-     neovim
-     # Web Browser
-     firefox
+    # Stow
+    pkgs.stow
+    # Home Manager
+    pkgs.home-manager
+    # Status bar
+    pkgs.waybar
+    (pkgs.waybar.overrideAttrs (oldAttrs: {mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];}))
+    # Notify Deamon
+    pkgs.dunst
+    libnotify
+    # Wallpaper Deamon
+    swww
+    # Terminal emulator
+    kitty
+    # App Launcher
+    rofi-wayland
+    # Text Editor
+    neovim
+    # Web Browser
+    firefox
   ];
 
   # Allow Unfree packages
@@ -99,9 +96,9 @@
 
   # 1Password
   programs._1password.enable = true;
-  programs._1password-gui = { 
-  	enable = true;
-	polkitPolicyOwners = [ "joaopedroaat" ];
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = ["joaopedroaat"];
   };
 
   # Enable flakes
@@ -109,7 +106,7 @@
 
   # Enable Desktop Portal
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   # Hyprland
   programs.hyprland.enable = true;
@@ -151,5 +148,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
