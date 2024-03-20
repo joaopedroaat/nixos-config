@@ -34,13 +34,24 @@
       expandtab = true; # Convert tabs to spaces
       shiftwidth = 2; # Number of spaces for each identation
       tabstop = 2; # Insert 2 spaces for a tab
-      # Signcolumn
-      signcolumn = "no"; # Always show the signcolumn
+      # SignColumn
+      signcolumn = "yes";
       # Lines out
       scrolloff = 8;
       sidescrolloff = 8;
     };
 
+    # Remove Highlight from SignColumn
+    autoCmd = [
+      {
+        event = "VimEnter";
+        command = "highlight clear SignColumn";
+        once = true;
+        desc = "Remove signcolumn highlight";
+      }
+    ];
+
+    # Clipboard
     clipboard.providers.xclip.enable = true;
     clipboard.register = "unnamedplus";
 
@@ -55,10 +66,16 @@
         action = "<cmd>Neotree toggle<CR>";
         options = {desc = "Open Neotree";};
       }
+      # Git
       {
         key = "<leader>gg";
         action = "<cmd>LazyGit<CR>";
         options = {desc = "Open LazyGit";};
+      }
+      {
+        key = "<leader>gp";
+        action = "<cmd>Gitsigns preview_hunk<CR>";
+        options = {desc = "Preview Hunk";};
       }
     ];
 
@@ -66,6 +83,8 @@
     plugins = {
       lualine.enable = true;
       oil.enable = true;
+      which-key.enable = true;
+      fugitive.enable = true;
     };
 
     extraPlugins = with pkgs.vimPlugins; [
@@ -74,10 +93,14 @@
       neo-tree-nvim
     ];
 
+    plugins.gitsigns = {
+      enable = true;
+      currentLineBlame = true;
+    };
+
     plugins.mini = {
       enable = true;
       modules = {
-        animate.enable = true;
         pairs.enable = true;
         move.enable = true;
         comment.enable = true;
