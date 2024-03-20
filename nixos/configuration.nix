@@ -68,25 +68,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # Stow
     pkgs.stow
-    # Home Manager
     pkgs.home-manager
-    # Status bar
-    pkgs.waybar
-    # Notify Deamon
-    pkgs.dunst
-    libnotify
-    # Wallpaper Deamon
-    swww
-    # Terminal emulator
-    kitty
-    # App Launcher
-    rofi-wayland
-    # Text Editor
     neovim
-    # Web Browser
-    firefox
   ];
 
   # Allow Unfree packages

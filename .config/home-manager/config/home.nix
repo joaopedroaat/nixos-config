@@ -22,6 +22,15 @@
     pkgs.alejandra
     # Lazygit
     pkgs.lazygit
+    # Wayland/Hyprland stuff
+    pkgs.swww
+    pkgs.dunst
+    pkgs.rofi-wayland
+    pkgs.libnotify
+    # Web Browser
+    pkgs.firefox
+    # Terminal emulator
+    pkgs.kitty
   ];
 
   home.file = {

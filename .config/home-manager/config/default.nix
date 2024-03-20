@@ -8,5 +8,6 @@
     ./tmux.nix
     ./ssh.nix
     ./home.nix
+    ./hyprland
   ];
 }
