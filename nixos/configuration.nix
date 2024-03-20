@@ -51,7 +51,6 @@
     isNormalUser = true;
     description = "João Pedro Almeida de Andrade Tenório";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [];
   };
 
   # Fonts
@@ -75,7 +74,6 @@
     pkgs.home-manager
     # Status bar
     pkgs.waybar
-    (pkgs.waybar.overrideAttrs (oldAttrs: {mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];}))
     # Notify Deamon
     pkgs.dunst
     libnotify
