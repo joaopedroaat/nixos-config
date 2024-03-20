@@ -85,6 +85,7 @@
       oil.enable = true;
       which-key.enable = true;
       fugitive.enable = true;
+      tmux-navigator.enable = true;
     };
 
     extraPlugins = with pkgs.vimPlugins; [
