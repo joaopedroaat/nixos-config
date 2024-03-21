@@ -29,8 +29,7 @@
         };
 
         clock = {
-          "format" = "{:%H:%M}";
-          "format-alt" = "{:%A, %d %b, %Y}";
+          "format" = "{:%d %b %Y - %OH:%M}";
           "tooltip-format" = "<tt><small>{calendar}</small></tt>";
           "calendar" = {
             "mode" = "month";
@@ -60,7 +59,7 @@
           "format-disconnected" = "⚠";
           "tooltip-format" = "{essid}\n{ipaddr}/{cidr}";
           "tooltip" = true;
-          "on-click" = "kitty --class=nmtui -e nmtui";
+          #"on-click" = "kitty --class=nmtui -e nmtui";
         };
 
         pulseaudio = {
@@ -77,7 +76,7 @@
             "default" = ["" "" ""];
           };
           "tooltip" = false;
-          "on-click" = "kitty --class=pulsemixer -e pulsemixer";
+          #"on-click" = "kitty --class=pulsemixer -e pulsemixer";
           "on-click-right" = "easyeffects";
           "ignored-sinks" = ["Easy Effects Sink" "Monitor of Easy Effects Sink"];
         };

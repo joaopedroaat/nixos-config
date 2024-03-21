@@ -34,6 +34,7 @@ in {
       $terminal = kitty
       $fileManager = dolphin
       $menu = rofi -show drun -show-icons
+      $windows = rofi -show window -show-icons
 
       # Some default env vars.
       env = XCURSOR_SIZE,24
@@ -62,8 +63,8 @@ in {
           gaps_in = 4
           gaps_out = 6
           border_size = 2
-          col.active_border = rgba(458588ee) rgba(689d6aee) 45deg
-          col.inactive_border = rgba(282828aa)
+          col.active_border = rgb(d65d0e) rgb(d65d0e) 45deg
+          col.inactive_border = rgb(282828)
 
           layout = dwindle
 
@@ -149,8 +150,9 @@ in {
       bind = $mainMod SHIFT, Q, killactive,
       bind = $mainMod, M, exit,
       bind = $mainMod, E, exec, $fileManager
-      bind = $mainMod, V, togglefloating,
+      bind = $mainMod SHIFT, SPACE, togglefloating,
       bind = $mainMod, D, exec, $menu
+      bind = $mainMod, SPACE, exec, $windows
       bind = $mainMod, P, pseudo, # dwindle
       bind = $mainMod, T, togglesplit, # dwindle
 
