@@ -29,8 +29,6 @@
     pkgs.libnotify
     # Web Browser
     pkgs.firefox
-    # Terminal emulator
-    pkgs.kitty
   ];
 
   home.file = {

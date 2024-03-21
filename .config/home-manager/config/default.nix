@@ -9,5 +9,6 @@
     ./ssh.nix
     ./home.nix
     ./hyprland
+    ./kitty.nix
   ];
 }
