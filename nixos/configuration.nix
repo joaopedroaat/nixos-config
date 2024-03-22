@@ -1,7 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{pkgs, ...}: {
+{
+  self,
+  pkgs,
+  ...
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -28,6 +32,12 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+  # Set VA-API (Video Acceleration API)
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [intel-media-driver];
+  };
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -50,7 +60,7 @@
   users.users.joaopedroaat = {
     isNormalUser = true;
     description = "João Pedro Almeida de Andrade Tenório";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
   };
 
   # Fonts
@@ -72,6 +82,27 @@
     pkgs.home-manager
     neovim
   ];
+
+  # Run unpatched dynamic binaries on NixOS.
+  programs.nix-ld = {
+    enable = true;
+    package = self.inputs.nix-ld-rs.packages.${pkgs.hostPlatform.system}.nix-ld-rs;
+    libraries = with pkgs; [
+      stdenv.cc.cc
+      openssl
+      glibc
+    ];
+  };
+
+  # Docker support
+  virtualisation.docker.enable = true;
+  /*
+   By default, the Docker daemon will store images, containers, and build context on the root filesystem.
+   If you want to change the location that Docker stores its data, you can configure a new data-root for the daemon by setting the data-root property of the virtualisation.docker.daemon.settings.
+  virtualisation.docker.daemon.settings = {
+  data-root = "/some-place/to-store-the-docker-data";
+  };
+  */
 
   # Allow Unfree packages
   nixpkgs.config.allowUnfree = true;

@@ -3,18 +3,19 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nix-ld-rs.url = "github:nix-community/nix-ld-rs";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-  }: let
+  outputs = {nixpkgs, ...} @ attrs: let
     system = "x86_64-linux";
   in {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit system;};
-        modules = [./configuration.nix];
+        inherit system;
+        specialArgs = attrs;
+        modules = [
+          ./configuration.nix
+        ];
       };
     };
   };
