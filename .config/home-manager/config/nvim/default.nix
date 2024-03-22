@@ -86,6 +86,7 @@
       which-key.enable = true;
       fugitive.enable = true;
       tmux-navigator.enable = true;
+      luasnip.enable = true;
     };
 
     extraPlugins = with pkgs.vimPlugins; [
@@ -138,12 +139,15 @@
           gd = "definition";
           gi = "implementation";
           gt = "type_definition";
+          "<leader>ca" = "code_action";
+          "<leader>cr" = "rename";
         };
       };
       servers = {
         nil_ls.enable = true;
         lua-ls.enable = true;
         tsserver.enable = true;
+        tailwindcss.enable = true;
       };
     };
 
@@ -151,10 +155,17 @@
       enable = true;
       autoEnableSources = true;
       settings = {
+        snippet.expand = ''
+          function(args)
+            require('luasnip').lsp_expand(args.body)
+          end
+        '';
         sources = [
+          {name = "luasnip";}
           {name = "nvim_lsp";}
           {name = "path";}
           {name = "buffer";}
+          {name = "dotenv";}
         ];
         mapping = {
           "<C-Space>" = "cmp.mapping.complete()";
