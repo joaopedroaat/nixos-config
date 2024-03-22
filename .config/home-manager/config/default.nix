@@ -4,7 +4,7 @@
     ./git.nix
     ./xdg.nix
     ./fish.nix
-    ./ui
+    ./gtk.nix
     ./tmux.nix
     ./ssh.nix
     ./home.nix
