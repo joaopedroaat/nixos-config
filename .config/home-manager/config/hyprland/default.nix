@@ -5,8 +5,6 @@
     swww init &
     swww img ${./wallpaper.jpg} &
 
-    nm-applet --indicator &
-
     dunst &
   '';
 in {
@@ -59,11 +57,10 @@ in {
 
       general {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
-
-          gaps_in = 4
-          gaps_out = 6
-          border_size = 2
-          col.active_border = rgb(d65d0e) rgb(d65d0e) 45deg
+          gaps_in = 2
+          gaps_out = 4
+          border_size = 1
+          col.active_border = rgb(928374) rgb(928374) 45deg
           col.inactive_border = rgb(282828)
 
           layout = dwindle
