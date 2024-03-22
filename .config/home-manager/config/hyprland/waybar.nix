@@ -126,6 +126,7 @@
       @define-color good #a9b665;
       @define-color info #7daea3;
       @define-color separator @dark-box;
+      @define-color green #98971a;
 
       * {
         color: @light-fg;
@@ -139,7 +140,7 @@
 
       #waybar {
         background: @bg-bar;
-        padding: 0 2;
+        padding: 0 8;
       }
 
       #workspaces button {
@@ -148,7 +149,7 @@
       }
 
       #workspaces button.active {
-        border-color: @purple;
+        border-color: @green;
       }
 
       #workspaces button.urgent {
