@@ -7,28 +7,30 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  home.packages = [
+  home.packages = with pkgs; [
     # Clipboard
-    pkgs.wl-clipboard
+    wl-clipboard
     # Telescope dependencies
-    pkgs.fd
-    pkgs.ripgrep
+    fd
+    ripgrep
     # Spotify
-    pkgs.spotify
+    spotify
     # Formatters
-    pkgs.nixpkgs-fmt
-    pkgs.prettierd
-    pkgs.yamlfmt
-    pkgs.alejandra
+    nixpkgs-fmt
+    prettierd
+    yamlfmt
+    alejandra
     # Lazygit
-    pkgs.lazygit
+    lazygit
     # Wayland/Hyprland stuff
-    pkgs.swww
-    pkgs.dunst
-    pkgs.rofi-wayland
-    pkgs.libnotify
+    swww
+    dunst
+    rofi-wayland
+    libnotify
     # Web Browser
-    pkgs.firefox
+    firefox
+    # Volta
+    volta
   ];
 
   home.file = {
