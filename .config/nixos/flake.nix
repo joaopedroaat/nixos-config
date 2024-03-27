@@ -10,12 +10,12 @@
     system = "x86_64-linux";
   in {
     nixosConfigurations = {
-      joaopedroaat-desktop = nixpkgs.lib.nixosSystem {
+      banana-tree = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = attrs;
         modules = [
           ./common-config.nix
-          ./machines/joaopedroaat-desktop
+          ./machines/banana-tree
         ];
       };
     };
