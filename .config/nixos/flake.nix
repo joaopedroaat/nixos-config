@@ -10,11 +10,12 @@
     system = "x86_64-linux";
   in {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      joaopedroaat-desktop = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = attrs;
         modules = [
-          ./configuration.nix
+          ./common-config.nix
+          ./machines/joaopedroaat-desktop
         ];
       };
     };
