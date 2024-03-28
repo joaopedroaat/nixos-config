@@ -15,6 +15,7 @@
     };
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprlock.url = "github:hyprwm/Hyprlock";
   };
 
   outputs = {
@@ -22,6 +23,7 @@
     home-manager,
     nixvim,
     hyprland,
+    hyprlock,
     ...
   }: let
     system = "x86_64-linux";
@@ -37,6 +39,7 @@
         config
         nixvim.homeManagerModules.nixvim
         hyprland.homeManagerModules.default
+        hyprlock.homeManagerModules.hyprlock
       ];
 
       # Optionally use extraSpecialArgs

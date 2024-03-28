@@ -11,5 +11,6 @@
     ./hyprland
     ./kitty.nix
     ./waybar
+    ./hyprlock.nix
   ];
 }

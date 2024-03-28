@@ -18,6 +18,7 @@ in {
       "$fileManager" = "dolphin";
       "$menu" = "rofi -show drun -show-icons";
       "$windows" = "rofi -show window -show-icons";
+      "$locker" = "hyprlock";
 
       # Default env vars.
       env = [
@@ -118,10 +119,11 @@ in {
       bind = [
         # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
         "$mainMod, RETURN, exec, $terminal"
-        "$mainMod SHIFT, Q, killactive,"
-        "$mainMod, M, exit,"
+        "$mainMod SHIFT, E, exec, $locker"
+        "$mainMod SHIFT, Q, killactive"
+        "$mainMod, M, exit"
         "$mainMod, E, exec, $fileManager"
-        "$mainMod SHIFT, SPACE, togglefloating,"
+        "$mainMod SHIFT, SPACE, togglefloating"
         "$mainMod, D, exec, $menu"
         "$mainMod, SPACE, exec, $windows"
         "$mainMod, P, pseudo, # dwindle"
