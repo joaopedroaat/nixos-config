@@ -1,0 +1,125 @@
+@define-color bg-bar #282828;
+@define-color dark-box #32302f;
+@define-color light-box #3c3836;
+@define-color light-fg #d4be98;
+@define-color dark-fg #32302f;
+@define-color selected #e78a4e;
+@define-color current_workspace #d65d0e;
+@define-color warning #d8a657;
+@define-color critical #ea6962;
+@define-color good #a9b665;
+@define-color info #7daea3;
+@define-color separator @dark-box;
+@define-color green #98971a;
+
+* {
+  color: @light-fg;
+  font-size: 13px;
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  padding: 0;
+  margin: 0;
+}
+
+#waybar {
+  background: @bg-bar;
+  padding: 0 8;
+}
+
+#workspaces button {
+  background: @light-box;
+  border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active {
+  border-color: @green;
+}
+
+#workspaces button.urgent {
+  color: @dark-fg;
+  background: @critical;
+}
+
+/*
+       * Arrows
+       */
+#custom-light-arrow-left,
+#custom-light-arrow-right,
+#custom-dark-arrow-left,
+#custom-dark-arrow-right {
+  font-size: 17px;
+  background: transparent;
+}
+
+#custom-light-arrow-left,
+#custom-light-arrow-right {
+  color: @light-box;
+}
+
+#custom-dark-arrow-left,
+#custom-dark-arrow-right {
+  color: @dark-box;
+}
+
+/*
+       * General background
+       */
+
+#temperature,
+#workspaces,
+#clock {
+  background: @light-box;
+  padding: 0 3 0 3;
+}
+
+#network {
+  background: @light-box;
+  padding: 0 11 0 3;
+}
+
+#pulseaudio {
+  background: @light-box;
+  padding: 0 6 0 3;
+}
+
+/*
+       * Warning plugins state
+       */
+#memory.warning,
+#cpu.warning,
+#battery.warning {
+  color: @warning;
+}
+
+/*
+       * Critical plugins state
+       */
+#cpu.critical,
+#temperature.critical,
+#memory.critical,
+#battery.critical,
+#network.disconnected {
+  color: @critical;
+}
+
+#mode {
+  color: @dark-fg;
+  background: @critical;
+}
+
+#battery.charging {
+  color: @good;
+}
+
+#battery.plugged {
+  color: @info;
+}
+
+#pulseaudio.bluetooth {
+  color: @info;
+}
+
+tooltip {
+  background: @dark-box;
+}

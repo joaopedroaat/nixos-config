@@ -10,5 +10,6 @@
     ./home.nix
     ./hyprland
     ./kitty.nix
+    ./waybar
   ];
 }

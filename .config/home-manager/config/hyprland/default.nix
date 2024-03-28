@@ -8,10 +8,6 @@
     dunst &
   '';
 in {
-  imports = [
-    ./waybar.nix
-  ];
-
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
