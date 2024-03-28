@@ -8,6 +8,7 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
+    ./modules
     ./hardware-configuration.nix
   ];
 
@@ -40,9 +41,6 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
-  # Configure console keymap
-  console.keyMap = "us";
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.joaopedroaat = {
     isNormalUser = true;
@@ -65,10 +63,16 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    pkgs.stow
     pkgs.home-manager
+    pkgs.stow
     neovim
   ];
+
+  # Common modules
+  _1password.enable = true;
+  docker.enable = true;
+  fish.enable = true;
+  hyprland.enable = true;
 
   # Run unpatched dynamic binaries on NixOS.
   programs.nix-ld = {
@@ -81,77 +85,11 @@
     ];
   };
 
-  # Docker support
-  virtualisation.docker.enable = true;
-  /*
-   By default, the Docker daemon will store images, containers, and build context on the root filesystem.
-   If you want to change the location that Docker stores its data, you can configure a new data-root for the daemon by setting the data-root property of the virtualisation.docker.daemon.settings.
-  virtualisation.docker.daemon.settings = {
-  data-root = "/some-place/to-store-the-docker-data";
-  };
-  */
-
   # Allow Unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Fish shell
-  programs.fish.enable = true;
-  programs.bash = {
-    interactiveShellInit = ''
-      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-      then
-        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-      fi
-    '';
-  };
-
-  # 1Password
-  programs._1password.enable = true;
-  programs._1password-gui = {
-    enable = true;
-    polkitPolicyOwners = ["joaopedroaat"];
-  };
-
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  # Enable Desktop Portal
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-
-  # Hyprland
-  programs.hyprland.enable = true;
-
-  # Pipewire
-  sound.enable = true;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
