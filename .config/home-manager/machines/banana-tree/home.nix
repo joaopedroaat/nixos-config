@@ -1,11 +1,5 @@
 {pkgs, ...}: {
-  home.username = "joaopedroaat";
-  home.homeDirectory = "/home/joaopedroaat";
-
   home.stateVersion = "23.11"; # Do not change
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
     # Clipboard
@@ -32,13 +26,4 @@
     # Volta
     volta
   ];
-
-  home.file = {
-  };
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
-
-  programs.home-manager.enable = true;
 }

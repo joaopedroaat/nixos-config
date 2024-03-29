@@ -28,15 +28,15 @@
   }: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    config = import ./config;
   in {
-    homeConfigurations."joaopedroaat" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."joaopedroaat@banana-tree" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
       # Specify your home configuration modules here, for example,
       # the path to your home.nix.
       modules = [
-        config
+        ./common-configs.nix
+        ./machines/banana-tree/home.nix
         nixvim.homeManagerModules.nixvim
         hyprland.homeManagerModules.default
         hyprlock.homeManagerModules.hyprlock
