@@ -4,6 +4,7 @@
   config,
   ...
 }: {
+  imports = [./plugins];
   options.nvim.enable = lib.mkEnableOption "Neovim";
   config = lib.mkIf config.nvim.enable {
     programs.nixvim = {
@@ -113,27 +114,6 @@
           pairs.enable = true;
           move.enable = true;
           comment.enable = true;
-        };
-      };
-
-      plugins.conform-nvim = {
-        enable = true;
-        formatOnSave = {
-          lspFallback = true;
-          timeoutMs = 500;
-        };
-        notifyOnError = true;
-        formattersByFt = {
-          html = ["prettierd"];
-          css = ["prettierd"];
-          javascript = ["prettierd"];
-          javascriptreact = ["prettierd"];
-          typescript = ["prettierd"];
-          typescriptreact = ["prettierd"];
-          nix = ["alejandra"];
-          markdown = ["prettierd"];
-          yaml = ["yamlfmt"];
-          "*" = ["trim_whitespace"];
         };
       };
 

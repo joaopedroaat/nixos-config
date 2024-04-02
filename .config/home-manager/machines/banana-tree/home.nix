@@ -9,11 +9,6 @@
     ripgrep
     # Spotify
     spotify
-    # Formatters
-    nixpkgs-fmt
-    prettierd
-    yamlfmt
-    alejandra
     # Lazygit
     lazygit
     # Wayland/Hyprland stuff
