@@ -18,6 +18,8 @@
     };
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   imports = [./modules];
 
   fish.enable = true;
@@ -29,6 +31,7 @@
   waybar.enable = true;
   nvim.enable = true;
   hyprland.enable = true;
+  discord.enable = true;
 
   programs.home-manager.enable = true;
 }

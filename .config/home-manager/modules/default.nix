@@ -10,5 +10,6 @@
     ./waybar
     ./hyprlock.nix
     ./spicetify.nix
+    ./discord.nix
   ];
 }
