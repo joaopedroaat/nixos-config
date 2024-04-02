@@ -9,5 +9,6 @@
     ./kitty.nix
     ./waybar
     ./hyprlock.nix
+    ./spicetify.nix
   ];
 }

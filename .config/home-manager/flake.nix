@@ -8,14 +8,19 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     # Nixvim
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
     hyprlock.url = "github:hyprwm/Hyprlock";
+
+    # Spicetify
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
   };
 
   outputs = {
@@ -24,6 +29,7 @@
     nixvim,
     hyprland,
     hyprlock,
+    spicetify-nix,
     ...
   }: let
     system = "x86_64-linux";
@@ -44,6 +50,7 @@
 
       # Optionally use extraSpecialArgs
       # to pass through arguments to home.nix
+      extraSpecialArgs = {inherit spicetify-nix;};
     };
   };
 }

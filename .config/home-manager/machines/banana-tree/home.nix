@@ -7,8 +7,6 @@
     # Telescope dependencies
     fd
     ripgrep
-    # Spotify
-    spotify
     # Lazygit
     lazygit
     # Wayland/Hyprland stuff
