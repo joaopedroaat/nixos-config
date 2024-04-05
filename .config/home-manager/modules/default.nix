@@ -7,9 +7,9 @@
     ./ssh.nix
     ./hyprland
     ./kitty.nix
-    ./waybar
     ./hyprlock.nix
     ./spicetify.nix
     ./discord.nix
+    ./volta.nix
   ];
 }

@@ -35,7 +35,7 @@
           };
 
           clock = {
-            "format" = "{:%d %b %Y - %OH:%M}";
+            "format" = "{:%d %b %Y, %OH:%M}";
             "tooltip-format" = "<tt><small>{calendar}</small></tt>";
             "calendar" = {
               "mode" = "month";
@@ -54,7 +54,7 @@
                 "on-scroll-up" = "Shift_up";
                 "on-scroll-down" = "shift_down";
               };
-              "on-click-right" = "kitty --class=calcure -e calcure";
+              "on-click" = "kitty --class=waybar/calcure -e calcure";
             };
           };
 
@@ -82,8 +82,7 @@
               "default" = ["" "" ""];
             };
             "tooltip" = false;
-            #"on-click" = "kitty --class=pulsemixer -e pulsemixer";
-            "on-click-right" = "easyeffects";
+            "on-click" = "kitty --class=waybar/pulsemixer -e pulsemixer";
             "ignored-sinks" = ["Easy Effects Sink" "Monitor of Easy Effects Sink"];
           };
 

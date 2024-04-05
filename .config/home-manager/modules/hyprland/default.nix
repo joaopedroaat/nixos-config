@@ -13,8 +13,31 @@
     dunst &
   '';
 in {
+  imports = [./waybar];
+
   options.hyprland.enable = lib.mkEnableOption "Hyprland";
   config = lib.mkIf config.hyprland.enable {
+    home.packages = with pkgs; [
+      # Notifications
+      libnotify
+      dunst
+      # Wallpaper
+      swww
+      # App launcher
+      rofi-wayland
+      # Clipboard
+      wl-clipboard
+      # Web Browser
+      firefox
+      # Calendar
+      calcure
+      # Pulsemixer
+      pulsemixer
+    ];
+
+    # Waybar
+    waybar.enable = true;
+
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
@@ -117,7 +140,11 @@ in {
 
         # Window rules
         windowrulev2 = "suppressevent maximize, class:.*"; # You'll probably like this.
-        windowrule = "opacity 0.8, ^(kitty)$";
+        windowrule = [
+          "opacity 0.8, ^(kitty)$"
+
+          # Pulsemixer
+        ];
 
         # Bindings
 

@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   programs.nixvim = {
     plugins.telescope = {
       enable = true;
@@ -24,5 +24,11 @@
         };
       };
     };
+
+    # Telescope dependencies
+    extraPackages = with pkgs; [
+      fd
+      ripgrep
+    ];
   };
 }

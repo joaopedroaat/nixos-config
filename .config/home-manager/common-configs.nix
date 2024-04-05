@@ -28,10 +28,10 @@
   kitty.enable = true;
   ssh.enable = true;
   tmux.enable = true;
-  waybar.enable = true;
   nvim.enable = true;
   hyprland.enable = true;
   discord.enable = true;
+  volta.enable = true;
 
   programs.home-manager.enable = true;
 }
