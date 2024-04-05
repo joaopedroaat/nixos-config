@@ -13,5 +13,6 @@
     ./telescope.nix
     ./tmux-navigator.nix
     ./which-key.nix
+    ./treesitter.nix
   ];
 }
