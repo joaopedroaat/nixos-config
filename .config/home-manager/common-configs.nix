@@ -32,6 +32,7 @@
   hyprland.enable = true;
   discord.enable = true;
   volta.enable = true;
+  golang.enable = true;
 
   programs.home-manager.enable = true;
 }

@@ -9,6 +9,7 @@
       "dockerfile"
       "json"
       "nix"
+      "go"
     ];
   };
 }

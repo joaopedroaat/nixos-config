@@ -17,6 +17,7 @@
         nix = ["alejandra"];
         markdown = ["prettierd"];
         yaml = ["yamlfmt"];
+        go = ["gofumpt" "goimports-reviser golines"];
         "*" = ["trim_whitespace"];
       };
     };
@@ -25,6 +26,9 @@
       alejandra
       prettierd
       yamlfmt
+      gofumpt
+      goimports-reviser
+      golines
     ];
   };
 }

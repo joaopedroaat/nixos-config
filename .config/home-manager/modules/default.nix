@@ -11,5 +11,6 @@
     ./spicetify.nix
     ./discord.nix
     ./volta.nix
+    ./golang.nix
   ];
 }
