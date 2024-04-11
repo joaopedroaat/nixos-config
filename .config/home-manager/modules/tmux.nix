@@ -23,11 +23,14 @@
         bind-key -T copy-mode-vi S-v send-keys -X rectangle-toggle
 
         # Create new session with C-n
-        bind C-n command-prompt -p "New Session:" "new-session -A -s '%%'"
+        bind C-n command-prompt -p "New Session:" "new-session -A -s '%%' -c '~'"
 
         # Open panes in current directory
         bind '"' split-window -v -c "#{pane_current_path}"
         bind % split-window -h -c "#{pane_current_path}"
+
+        # Open windows in current directory
+        bind c new-window -c "#{pane_current_path}"
       '';
 
       plugins = with pkgs; [
