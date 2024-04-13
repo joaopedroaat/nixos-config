@@ -4,5 +4,6 @@
     ./fish.nix
     ./docker.nix
     ./hyprland.nix
+    ./steam.nix
   ];
 }
