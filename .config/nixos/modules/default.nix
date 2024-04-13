@@ -5,5 +5,6 @@
     ./docker.nix
     ./hyprland.nix
     ./steam.nix
+    ./lutris.nix
   ];
 }

@@ -17,4 +17,7 @@
       amdvlk
     ];
   };
+
+  # Modules
+  lutris.enable = true;
 }
