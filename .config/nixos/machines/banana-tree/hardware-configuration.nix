@@ -27,7 +27,7 @@
     fsType = "vfat";
   };
 
-  fileSystems."/home/joaopedroaat/.local/share/mnt/dev/sdb1" = {
+  fileSystems."/mnt/hd1" = {
     device = "/dev/disk/by-uuid/f6ae5e60-84db-413f-ba1b-0ce9c5e12463";
     fsType = "ext4";
   };
