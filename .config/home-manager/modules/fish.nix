@@ -9,6 +9,7 @@
       enable = true;
       shellInit = ''
         set -U fish_greeting
+        set -U fish_features qmark-noglob
       '';
     };
   };
