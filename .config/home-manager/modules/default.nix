@@ -12,5 +12,6 @@
     ./discord.nix
     ./volta.nix
     ./golang.nix
+    ./insomnia.nix
   ];
 }

@@ -33,6 +33,7 @@
   discord.enable = true;
   volta.enable = true;
   golang.enable = true;
+  insomnia.enable = true;
 
   programs.home-manager.enable = true;
 }
