@@ -72,7 +72,6 @@
   docker.enable = true;
   fish.enable = true;
   hyprland.enable = true;
-  steam.enable = true;
 
   # Run unpatched dynamic binaries on NixOS.
   programs.nix-ld = {
