@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  imports = [
+    ./hardware-configuration.nix
+  ];
+
   networking.hostName = "banana-tree";
 
   # Configure console keymap
