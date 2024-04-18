@@ -8,6 +8,7 @@
       "tsx"
       "dockerfile"
       "json"
+      "yaml"
       "nix"
       "go"
     ];
