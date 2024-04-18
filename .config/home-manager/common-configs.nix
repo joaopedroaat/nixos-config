@@ -34,6 +34,7 @@
   volta.enable = true;
   golang.enable = true;
   insomnia.enable = true;
+  google-cloud.enable = true;
 
   programs.home-manager.enable = true;
 }
