@@ -14,5 +14,6 @@
     ./tmux-navigator.nix
     ./which-key.nix
     ./treesitter.nix
+    ./auto-session.nix
   ];
 }
