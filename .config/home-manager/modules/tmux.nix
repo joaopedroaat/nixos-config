@@ -3,7 +3,8 @@
   lib,
   config,
   ...
-}: {
+}
+: {
   options.tmux.enable = lib.mkEnableOption "Tmux";
   config = lib.mkIf config.tmux.enable {
     programs.tmux = {
@@ -48,8 +49,14 @@
         {
           plugin = tmuxPlugins.resurrect;
           extraConfig = ''
-            # Restore nvim sessions
-            set -g @resurrect-strategy-nvim 'session'
+          '';
+        }
+        {
+          plugin = tmuxPlugins.continuum;
+          extraConfig = ''
+            # Restore environment automatically
+            set -g @continuum-restore 'on'
+            set -g @continuum-save-interval '1'
           '';
         }
       ];
