@@ -3,6 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   self,
+  lib,
   pkgs,
   ...
 }: {
@@ -59,6 +60,14 @@
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
+  # Unfree packages
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "1password"
+      "1password-gui"
+      "1password-cli"
+    ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -83,9 +92,6 @@
       glibc
     ];
   };
-
-  # Allow Unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
