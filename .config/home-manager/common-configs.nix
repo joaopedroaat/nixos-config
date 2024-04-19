@@ -35,6 +35,7 @@
   golang.enable = true;
   insomnia.enable = true;
   google-cloud.enable = true;
+  openssl.enable = true;
 
   programs.home-manager.enable = true;
 }

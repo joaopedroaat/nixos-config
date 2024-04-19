@@ -14,5 +14,6 @@
     ./golang.nix
     ./insomnia.nix
     ./google-cloud.nix
+    ./openssl.nix
   ];
 }
