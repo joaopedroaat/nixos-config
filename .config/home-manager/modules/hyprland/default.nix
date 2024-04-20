@@ -31,9 +31,6 @@ in {
       calcure
       # Pulsemixer
       pulsemixer
-      # Screenshot
-      grim
-      slurp
     ];
 
     # Waybar
@@ -46,7 +43,7 @@ in {
 
         # Variables
         "$terminal" = "kitty";
-        "$fileManager" = "dolphin";
+        "$fileManager" = "kitty --class filemanager -e lf";
         "$menu" = "rofi -show drun -show-icons";
         "$windows" = "rofi -show window -show-icons";
         "$locker" = "hyprlock";
@@ -140,11 +137,16 @@ in {
         };
 
         # Window rules
-        windowrulev2 = "suppressevent maximize, class:.*"; # You'll probably like this.
         windowrule = [
           "opacity 0.8, ^(kitty)$"
+        ];
 
-          # Pulsemixer
+        windowrulev2 = [
+          "suppressevent maximize, class:.*" # You'll probably like this.
+
+          "float,class:(filemanager)"
+          "center(1),class:(filemanager)"
+          "size 960 540,class:(filemanager)"
         ];
 
         # Bindings
@@ -154,9 +156,9 @@ in {
         bind = [
           # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
           "$mainMod, RETURN, exec, $terminal"
-          "$mainMod SHIFT, E, exec, $locker"
+          "$mainMod, M, exec, $locker"
           "$mainMod SHIFT, Q, killactive"
-          "$mainMod, M, exit"
+          "$mainMod SHIFT, E, exit"
           "$mainMod, E, exec, $fileManager"
           "$mainMod SHIFT, SPACE, togglefloating"
           "$mainMod, D, exec, $menu"
@@ -164,7 +166,7 @@ in {
           "$mainMod, SPACE, exec, $windows"
           "$mainMod, P, pseudo, # dwindle"
           "$mainMod, T, togglesplit, # dwindle"
-          "$mainMod SHIFT, P, exec, grim -g \"$(slurp -d)\" - | wl-copy"
+          "$mainMod SHIFT, P, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | wl-copy"
 
           # Move focus with mainMod + arrow keys
           "$mainMod, H, movefocus, l"
