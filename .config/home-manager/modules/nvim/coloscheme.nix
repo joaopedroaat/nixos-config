@@ -1,5 +1,8 @@
 {...}: {
   programs.nixvim = {
-    colorschemes.gruvbox.enable = true;
+    colorschemes.rose-pine = {
+      enable = true;
+      style = "main"; # main, moon or dawn
+    };
   };
 }
