@@ -80,8 +80,8 @@ in {
           gaps_in = 2;
           gaps_out = 4;
           border_size = 1;
-          "col.active_border" = "rgb(928374) rgb(928374) 45deg";
-          "col.inactive_border" = "rgb(282828)";
+          "col.active_border" = "0xffebbcba";
+          "col.inactive_border" = "0xff6e6a86";
 
           layout = "dwindle";
 
