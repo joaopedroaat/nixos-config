@@ -23,8 +23,6 @@ in {
       dunst
       # Wallpaper
       swww
-      # App launcher
-      rofi-wayland
       # Clipboard
       wl-clipboard
       # Web Browser

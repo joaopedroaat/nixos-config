@@ -47,5 +47,7 @@
   google-cloud.enable = true;
   openssl.enable = true;
 
+  programs.rofi.enable = true;
+
   programs.home-manager.enable = true;
 }
