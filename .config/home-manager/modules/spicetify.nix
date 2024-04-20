@@ -12,7 +12,7 @@ in {
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.Ziro;
-    colorscheme = "moon";
+    colorScheme = "rose-pine-moon";
 
     enabledExtensions = with spicePkgs.extensions; [
       keyboardShortcut
