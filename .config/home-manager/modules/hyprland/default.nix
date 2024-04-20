@@ -31,6 +31,9 @@ in {
       calcure
       # Pulsemixer
       pulsemixer
+      # Screenshot
+      grim
+      slurp
     ];
 
     # Waybar
@@ -157,9 +160,11 @@ in {
           "$mainMod, E, exec, $fileManager"
           "$mainMod SHIFT, SPACE, togglefloating"
           "$mainMod, D, exec, $menu"
+          "$mainMod, Menu, exec, $menu"
           "$mainMod, SPACE, exec, $windows"
           "$mainMod, P, pseudo, # dwindle"
           "$mainMod, T, togglesplit, # dwindle"
+          "$mainMod SHIFT, P, exec, grim -g \"$(slurp -d)\" - | wl-copy"
 
           # Move focus with mainMod + arrow keys
           "$mainMod, H, movefocus, l"
