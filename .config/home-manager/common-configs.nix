@@ -7,10 +7,6 @@
   home.username = "joaopedroaat";
   home.homeDirectory = "/home/joaopedroaat";
 
-  home.packages = with pkgs; [
-    moreutils
-  ];
-
   home.sessionVariables = {
     EDITOR = "nvim";
     GTK_THEME = config.gtk.theme.name;

@@ -6,6 +6,11 @@
 }: {
   options.tmux.enable = lib.mkEnableOption "Tmux";
   config = lib.mkIf config.tmux.enable {
+    # Needed to open nvim sessions, need to fix in the future!!!
+    home.packages = with pkgs; [
+      moreutils
+    ];
+
     programs.tmux = {
       enable = true;
       keyMode = "vi";
@@ -90,7 +95,6 @@
             set -g @resurrect-dir $resurrect_dir
             set -g @resurrect-hook-post-save-all "sed 's/--cmd[^ ]* [^ ]* [^ ]*//g' $resurrect_dir/last | sponge $resurrect_dir/last"
             set -g @resurrect-processes '"~nvim"'
-
           '';
         }
         {
