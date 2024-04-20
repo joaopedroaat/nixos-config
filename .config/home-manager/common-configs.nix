@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }: {
   home.username = "joaopedroaat";
@@ -8,17 +9,38 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    GTK_THEME = config.gtk.theme.name;
   };
 
   xdg.enable = true;
   xdg.userDirs.enable = true;
   xdg.userDirs.createDirectories = true;
 
+  # Fix for gtk4 theme
+  xdg.configFile = {
+    "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
+    "gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
+    "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
+  };
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    # x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 14;
+  };
+
   gtk = {
     enable = true;
     theme = {
-      name = "gruvbox-dark";
-      package = pkgs.gruvbox-dark-gtk;
+      package = pkgs.rose-pine-gtk-theme;
+      name = "rose-pine";
+    };
+
+    iconTheme = {
+      package = pkgs.rose-pine-icon-theme;
+      name = "rose-pine-icons";
     };
   };
 
