@@ -24,83 +24,34 @@
 
 * {
   color: @text;
-  font-size: 13px;
-  border: none;
-  border-radius: 0;
+  font-size: 12px;
   font-family: "JetBrainsMono Nerd Font";
-  padding: 0;
-  margin: 0;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
 }
 
 #waybar {
   background: @base;
-  padding: 0 8;
+}
+
+#workspaces {
+  padding-left: 8px;
 }
 
 #workspaces button {
-  background: @surface;
   border-bottom: 2px solid transparent;
 }
 
 #workspaces button.active {
-  border-color: @pine;
+  border-bottom-color: @love;
 }
 
 #workspaces button.urgent {
-  color: @;
   background: @highlightHigh;
 }
 
-#temperature,
-#workspaces,
-#clock {
-  padding: 0 3 0 3;
-}
-
-#network {
-  padding: 0 11 0 3;
-}
-
-#pulseaudio {
-  padding: 0 6 0 3;
-}
-
-/*
-       * Warning plugins state
-       */
-#memory.warning,
-#cpu.warning,
-#battery.warning {
-  color: @highlightHigh;
-}
-
-/*
-       * Critical plugins state
-       */
-#cpu.critical,
-#temperature.critical,
-#memory.critical,
-#battery.critical,
-#network.disconnected {
-  color: @highlightHigh;
-}
-
-#mode {
-  background: @highlightHigh;
-}
-
-#battery.charging {
-  color: @highlightLow;
-}
-
-#battery.plugged {
-  color: @pine;
-}
-
-#pulseaudio.bluetooth {
-  color: @pine;
-}
-
-tooltip {
-  background: @surface;
+#window {
+  padding-right: 8px;
 }
