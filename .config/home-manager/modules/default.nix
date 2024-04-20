@@ -16,5 +16,6 @@
     ./google-cloud.nix
     ./openssl.nix
     ./rofi
+    ./lf
   ];
 }

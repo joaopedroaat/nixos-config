@@ -28,7 +28,7 @@
     # x11.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
-    size = 14;
+    size = 11;
   };
 
   gtk = {
@@ -69,6 +69,7 @@
   google-cloud.enable = true;
   openssl.enable = true;
 
+  programs.lf.enable = true;
   programs.rofi.enable = true;
 
   programs.home-manager.enable = true;
