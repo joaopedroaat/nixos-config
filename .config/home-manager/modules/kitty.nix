@@ -12,7 +12,7 @@
         name = "JetBrainsMono Nerd Font";
       };
 
-      theme = "Gruvbox Dark";
+      theme = "Rosé Pine";
 
       settings = {
         confirm_os_window_close = 0;
