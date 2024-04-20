@@ -1,19 +1,29 @@
-@define-color bg-bar #282828;
-@define-color dark-box #32302f;
-@define-color light-box #3c3836;
-@define-color light-fg #d4be98;
-@define-color dark-fg #32302f;
-@define-color selected #e78a4e;
-@define-color current_workspace #d65d0e;
-@define-color warning #d8a657;
-@define-color critical #ea6962;
-@define-color good #a9b665;
-@define-color info #7daea3;
-@define-color separator @dark-box;
-@define-color green #98971a;
+/*
+* Variant: Rosé Pine
+* Maintainer: DankChoir
+*/
+
+@define-color base            #191724;
+@define-color surface         #1f1d2e;
+@define-color overlay         #26233a;
+
+@define-color muted           #6e6a86;
+@define-color subtle          #908caa;
+@define-color text            #e0def4;
+
+@define-color love            #eb6f92;
+@define-color gold            #f6c177;
+@define-color rose            #ebbcba;
+@define-color pine            #31748f;
+@define-color foam            #9ccfd8;
+@define-color iris            #c4a7e7;
+
+@define-color highlightLow    #21202e;
+@define-color highlightMed    #403d52;
+@define-color highlightHigh   #524f67;
 
 * {
-  color: @light-fg;
+  color: @text;
   font-size: 13px;
   border: none;
   border-radius: 0;
@@ -23,63 +33,35 @@
 }
 
 #waybar {
-  background: @bg-bar;
+  background: @base;
   padding: 0 8;
 }
 
 #workspaces button {
-  background: @light-box;
+  background: @surface;
   border-bottom: 2px solid transparent;
 }
 
 #workspaces button.active {
-  border-color: @green;
+  border-color: @pine;
 }
 
 #workspaces button.urgent {
-  color: @dark-fg;
-  background: @critical;
+  color: @;
+  background: @highlightHigh;
 }
-
-/*
-       * Arrows
-       */
-#custom-light-arrow-left,
-#custom-light-arrow-right,
-#custom-dark-arrow-left,
-#custom-dark-arrow-right {
-  font-size: 17px;
-  background: transparent;
-}
-
-#custom-light-arrow-left,
-#custom-light-arrow-right {
-  color: @light-box;
-}
-
-#custom-dark-arrow-left,
-#custom-dark-arrow-right {
-  color: @dark-box;
-}
-
-/*
-       * General background
-       */
 
 #temperature,
 #workspaces,
 #clock {
-  background: @light-box;
   padding: 0 3 0 3;
 }
 
 #network {
-  background: @light-box;
   padding: 0 11 0 3;
 }
 
 #pulseaudio {
-  background: @light-box;
   padding: 0 6 0 3;
 }
 
@@ -89,7 +71,7 @@
 #memory.warning,
 #cpu.warning,
 #battery.warning {
-  color: @warning;
+  color: @highlightHigh;
 }
 
 /*
@@ -100,26 +82,25 @@
 #memory.critical,
 #battery.critical,
 #network.disconnected {
-  color: @critical;
+  color: @highlightHigh;
 }
 
 #mode {
-  color: @dark-fg;
-  background: @critical;
+  background: @highlightHigh;
 }
 
 #battery.charging {
-  color: @good;
+  color: @highlightLow;
 }
 
 #battery.plugged {
-  color: @info;
+  color: @pine;
 }
 
 #pulseaudio.bluetooth {
-  color: @info;
+  color: @pine;
 }
 
 tooltip {
-  background: @dark-box;
+  background: @surface;
 }

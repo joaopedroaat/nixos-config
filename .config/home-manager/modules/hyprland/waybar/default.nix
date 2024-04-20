@@ -16,13 +16,11 @@
 
           modules-left = [
             "hyprland/workspaces"
-            "custom/light-arrow-right"
           ];
           modules-center = [
             "hyprland/window"
           ];
           modules-right = [
-            "custom/light-arrow-left"
             "pulseaudio"
             "network"
             "clock"
@@ -84,26 +82,6 @@
             "tooltip" = false;
             "on-click" = "kitty --class=waybar/pulsemixer -e pulsemixer";
             "ignored-sinks" = ["Easy Effects Sink" "Monitor of Easy Effects Sink"];
-          };
-
-          "custom/light-arrow-left" = {
-            "tooltip" = false;
-            "format" = "";
-          };
-
-          "custom/dark-arrow-left" = {
-            "tooltip" = false;
-            "format" = "";
-          };
-
-          "custom/light-arrow-right" = {
-            "tooltip" = false;
-            "format" = "";
-          };
-
-          "custom/dark-arrow-right" = {
-            "tooltip" = false;
-            "format" = "";
           };
         };
       };
