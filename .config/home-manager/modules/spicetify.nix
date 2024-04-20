@@ -11,10 +11,12 @@ in {
   # configure spicetify :)
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.Onepunch;
+    theme = spicePkgs.themes.Ziro;
+    colorscheme = "moon";
 
     enabledExtensions = with spicePkgs.extensions; [
       keyboardShortcut
+      loopyLoop
     ];
   };
 }
