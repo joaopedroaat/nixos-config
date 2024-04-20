@@ -57,7 +57,7 @@
     font-awesome
 
     # NerdFonts
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+    (nerdfonts.override {fonts = ["JetBrainsMono" "FiraCode"];})
   ];
 
   # Unfree packages
