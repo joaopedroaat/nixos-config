@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}
-: {
+}: {
   options.tmux.enable = lib.mkEnableOption "Tmux";
   config = lib.mkIf config.tmux.enable {
     programs.tmux = {
@@ -87,6 +86,11 @@
         {
           plugin = tmuxPlugins.resurrect;
           extraConfig = ''
+            resurrect_dir="$HOME/.tmux/resurrect"
+            set -g @resurrect-dir $resurrect_dir
+            set -g @resurrect-hook-post-save-all "sed 's/--cmd[^ ]* [^ ]* [^ ]*//g' $resurrect_dir/last | sponge $resurrect_dir/last"
+            set -g @resurrect-processes '"~nvim"'
+
           '';
         }
         {
@@ -94,7 +98,7 @@
           extraConfig = ''
             # Restore environment automatically
             set -g @continuum-restore 'on'
-            set -g @continuum-save-interval '1'
+            set -g @continuum-save-interval '10'
           '';
         }
       ];
