@@ -21,7 +21,7 @@
           "hyprland/workspaces" = {
             "disable-scroll" = true;
             "all-outputs" = false;
-            "format" = "{id}{icon}";
+            "format" = "{id} {icon}";
             "format-icons" = {
               "urgent" = "";
               "default" = "";
