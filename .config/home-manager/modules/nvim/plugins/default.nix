@@ -15,5 +15,6 @@
     ./which-key.nix
     ./treesitter.nix
     ./auto-session.nix
+    ./tailwindcss-colors.nix
   ];
 }
