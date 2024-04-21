@@ -39,6 +39,15 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
+        # Startup scripts
+        exec-once = [
+          ''${startupScript}/bin/start''
+          "[workspace 1 silent] kitty -e tmux a"
+          "[workspace 2 silent] firefox"
+          "[workspace 3 silent] spotify"
+          "[workspace 4 silent] 1password"
+        ];
+
         monitor = ",preferred,auto,auto";
 
         # Variables
@@ -47,6 +56,7 @@ in {
         "$menu" = "rofi -show drun -show-icons";
         "$windows" = "rofi -show window -show-icons";
         "$locker" = "hyprlock";
+        "$passwordManager" = "1password";
 
         # Default env vars.
         env = [
@@ -70,8 +80,6 @@ in {
 
           sensitivity = 0; # -1.0 to 1.0, 0 means no modification.
         };
-
-        exec-once = ''${startupScript}/bin/start'';
 
         general = {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
@@ -147,6 +155,10 @@ in {
           "float,class:(filemanager)"
           "center(1),class:(filemanager)"
           "size 960 540,class:(filemanager)"
+
+          "float, title:(1Password)"
+          "size 70% 70%, title:(1Password)"
+          "center, title:(1Password)"
         ];
 
         # Bindings
@@ -156,7 +168,7 @@ in {
         bind = [
           # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
           "$mainMod, RETURN, exec, $terminal"
-          "$mainMod, M, exec, $locker"
+          "$mainMod SHIFT, L, exec, $locker"
           "$mainMod SHIFT, Q, killactive"
           "$mainMod SHIFT, E, exit"
           "$mainMod, E, exec, $fileManager"
@@ -166,7 +178,9 @@ in {
           "$mainMod, SPACE, exec, $windows"
           "$mainMod, P, pseudo, # dwindle"
           "$mainMod, T, togglesplit, # dwindle"
-          "$mainMod SHIFT, P, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | wl-copy"
+          "$mainMod, code:35, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | wl-copy"
+          "$mainMod SHIFT, code:35, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\""
+          "$mainMod, code:51, exec, $passwordManager"
 
           # Move focus with mainMod + arrow keys
           "$mainMod, H, movefocus, l"
