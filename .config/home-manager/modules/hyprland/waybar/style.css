@@ -1,57 +1,101 @@
-/*
-* Variant: Rosé Pine
-* Maintainer: DankChoir
-*/
-
-@define-color base            #191724;
-@define-color surface         #1f1d2e;
-@define-color overlay         #26233a;
-
-@define-color muted           #6e6a86;
-@define-color subtle          #908caa;
-@define-color text            #e0def4;
-
-@define-color love            #eb6f92;
-@define-color gold            #f6c177;
-@define-color rose            #ebbcba;
-@define-color pine            #31748f;
-@define-color foam            #9ccfd8;
-@define-color iris            #c4a7e7;
-
-@define-color highlightLow    #21202e;
-@define-color highlightMed    #403d52;
-@define-color highlightHigh   #524f67;
-
 * {
-  color: @text;
-  font-size: 12px;
-  font-family: "JetBrainsMono Nerd Font";
-  margin: 0px;
-  padding: 0px;
   border: none;
-  border-radius: 0px;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
+  min-height: 0;
 }
 
-#waybar {
-  background: @base;
-}
-
-#workspaces {
-  padding-left: 8px;
-}
-
-#workspaces button {
-  border-bottom: 2px solid transparent;
-}
-
-#workspaces button.active {
-  border-bottom-color: @love;
-}
-
-#workspaces button.urgent {
-  background: @highlightHigh;
+window#waybar {
+  background: #191724;
+  color: #e0def4;
 }
 
 #window {
-  padding-right: 8px;
+  font-weight: bold;
 }
+
+/*
+#workspaces {
+    padding: 0 5px;
+}
+*/
+
+#workspaces button {
+  padding: 0 1px;
+  background: transparent;
+  color: #e0def4;
+}
+
+#workspaces button.active {
+  color: #f6c177;
+}
+
+#submap {
+  background: #f6c177;
+  border-bottom: 3px solid #e0def4;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#submap {
+  padding: 0 3px;
+  margin: 0 2px;
+}
+
+#clock {
+  font-weight: bold;
+}
+
+/* #battery { */
+/* } */
+
+#battery icon {
+  color: red;
+}
+
+/* #battery.charging { */
+/* } */
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
+}
+
+#battery.warning:not(.charging) {
+  color: white;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* #cpu { */
+/* } */
+
+/* #memory { */
+/* } */
+
+/* #network { */
+/* } */
+
+#network.disconnected {
+  background: #f53c3c;
+}
+
+/* #pulseaudio { */
+/* } */
+
+/* #pulseaudio.muted { */
+/* } */
+
+/* #tray { */
+/* } */
