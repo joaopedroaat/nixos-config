@@ -6,23 +6,50 @@
     commands = {
       dragon-out = ''%${pkgs.xdragon}/bin/xdragon -a -x "$fx"'';
       editor-open = ''$$EDITOR $f'';
-      mkdir = ''
+      create = ''
         ''${{
-          printf "Directory Name: "
-          read DIR
-          mkdir $DIR
+          printf "Enter name for new file or directory: "
+          read NAME
+          if [[ "$NAME" == */]] then
+            mkdir $NAME
+          else
+            touch $NAME
+          fi
+        }}
+      '';
+      setWallpaper = ''
+        ''${{
+          ${pkgs.swww}/bin/swww img $f
         }}
       '';
     };
 
     keybindings = {
+      # Unbind
       "\\\"" = "";
       o = "";
-      c = "mkdir";
+      d = "";
+
+      # Basic functions
+      a = "create";
+      dd = "delete";
+      x = "cut";
+      y = "copy";
+      R = "reload";
+      c = "clear";
+      "<enter>" = "open";
+      "<space>" = "toggle";
       "." = "set hidden!";
+      bg = "setWallpaper";
+
+      # Movement
+      gd = "cd ~/Documents/";
+      gD = "cd ~/Downloads/";
+      gp = "cd ~/Pictures/";
+      gP = "cd ~/Projects/";
+
       "`" = "mark-load";
       "\\'" = "mark-load";
-      "<enter>" = "open";
 
       do = "dragon-out";
 
@@ -38,7 +65,7 @@
 
     settings = {
       preview = true;
-      hidden = true;
+      hidden = false;
       drawbox = true;
       icons = true;
       ignorecase = true;
