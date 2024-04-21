@@ -17,5 +17,6 @@
     ./openssl.nix
     ./rofi
     ./lf
+    ./waybar
   ];
 }

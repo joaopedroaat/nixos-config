@@ -38,10 +38,10 @@
             "format-alt" = "{:%Y-%m-%d}";
           };
           "cpu" = {
-            "format" = "{usage}% ";
+            "format" = " {usage}%";
           };
           "memory" = {
-            "format" = "{}% ";
+            "format" = " {}%";
           };
           "battery" = {
             "bat" = "BAT0";
@@ -57,14 +57,14 @@
           };
           "network" = {
             # "interface"= "wlp2s0"; # (Optional) To force the use of this interface
-            "format-wifi" = "{essid} ({signalStrength}%) ";
+            "format-wifi" = " {essid}";
             "format-ethernet" = "{ifname}: {ipaddr}/{cidr} ";
             "format-disconnected" = "Disconnected ⚠";
           };
           "pulseaudio" = {
             #"scroll-step"= 1;
-            "format" = "{volume}% {icon}";
-            "format-bluetooth" = "{volume}% {icon}";
+            "format" = "{icon} {volume}%";
+            "format-bluetooth" = "{icon} {volume}% ";
             "format-muted" = "";
             "format-icons" = {
               "headphones" = "";

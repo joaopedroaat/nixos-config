@@ -68,6 +68,7 @@
   insomnia.enable = true;
   google-cloud.enable = true;
   openssl.enable = true;
+  waybar.enable = true;
 
   programs.lf.enable = true;
   programs.rofi.enable = true;

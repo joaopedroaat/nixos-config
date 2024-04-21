@@ -8,13 +8,10 @@
     waybar &
 
     swww init &
-    swww img ${./wallpaper.jpg} &
 
     dunst &
   '';
 in {
-  imports = [./waybar];
-
   options.hyprland.enable = lib.mkEnableOption "Hyprland";
   config = lib.mkIf config.hyprland.enable {
     home.packages = with pkgs; [
@@ -159,6 +156,11 @@ in {
           "float, title:(1Password)"
           "size 70% 70%, title:(1Password)"
           "center, title:(1Password)"
+
+          "float, class:(pulsemixer)"
+          "move 1171 32, class:(pulsemixer)"
+          "size 741 341, class:(pulsemixer)"
+          "pin, class:(pulsemixer)"
         ];
 
         # Bindings
