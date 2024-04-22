@@ -170,7 +170,7 @@ in {
         bind = [
           # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
           "$mainMod, RETURN, exec, $terminal"
-          "$mainMod SHIFT, L, exec, $locker"
+          "$mainMod SHIFT, code:20, exec, $locker" # SUPER + SHIFT + _
           "$mainMod SHIFT, Q, killactive"
           "$mainMod SHIFT, E, exit"
           "$mainMod, E, exec, $fileManager"
@@ -180,8 +180,8 @@ in {
           "$mainMod, SPACE, exec, $windows"
           "$mainMod, P, pseudo, # dwindle"
           "$mainMod, T, togglesplit, # dwindle"
-          "$mainMod, code:35, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | wl-copy"
-          "$mainMod SHIFT, code:35, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\""
+          "$mainMod, code:35, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | wl-copy" # SUPER + [
+          "$mainMod SHIFT, code:35, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\"" # SUPER + SHIFT + [
           "$mainMod, code:51, exec, $passwordManager"
 
           # Move focus with mainMod + arrow keys
