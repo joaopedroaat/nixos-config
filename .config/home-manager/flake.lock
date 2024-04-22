@@ -354,6 +354,22 @@
         "type": "github"
       }
     },
+    "lazydocker-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692654599,
+        "narHash": "sha256-W9q3rXdPDraTI8eVXSekBFAhEMZ4Zq2D+YpxHpG5tGM=",
+        "owner": "crnvl96",
+        "repo": "lazydocker.nvim",
+        "rev": "18304537bf26ceb3c0d01bf6b4cf7d782e1680ec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "crnvl96",
+        "repo": "lazydocker.nvim",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -498,6 +514,7 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprlock": "hyprlock",
+        "lazydocker-nvim": "lazydocker-nvim",
         "nixpkgs": "nixpkgs_3",
         "nixvim": "nixvim",
         "spicetify-nix": "spicetify-nix"

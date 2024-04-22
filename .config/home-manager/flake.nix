@@ -15,6 +15,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Nixvim extra plugins
+    lazydocker-nvim = {
+      url = "github:crnvl96/lazydocker.nvim";
+      flake = false;
+    };
+
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
     hyprlock.url = "github:hyprwm/Hyprlock";
@@ -30,6 +36,7 @@
     hyprland,
     hyprlock,
     spicetify-nix,
+    lazydocker-nvim,
     ...
   }: let
     system = "x86_64-linux";
@@ -50,7 +57,10 @@
 
       # Optionally use extraSpecialArgs
       # to pass through arguments to home.nix
-      extraSpecialArgs = {inherit spicetify-nix;};
+      extraSpecialArgs = {
+        inherit spicetify-nix;
+        inherit lazydocker-nvim;
+      };
     };
   };
 }
