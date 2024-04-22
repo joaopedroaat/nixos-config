@@ -7,7 +7,6 @@
     ./ssh.nix
     ./hyprland
     ./kitty.nix
-    ./hyprlock.nix
     ./spicetify.nix
     ./discord.nix
     ./volta.nix

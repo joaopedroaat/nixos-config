@@ -12,6 +12,8 @@
     dunst &
   '';
 in {
+  imports = [./hyprlock.nix];
+
   options.hyprland.enable = lib.mkEnableOption "Hyprland";
   config = lib.mkIf config.hyprland.enable {
     home.packages = with pkgs; [
@@ -32,6 +34,9 @@ in {
 
     # Waybar
     waybar.enable = true;
+
+    # Hyprlock
+    hyprlock.enable = true;
 
     wayland.windowManager.hyprland = {
       enable = true;
