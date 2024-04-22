@@ -86,7 +86,7 @@ in {
         general = {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
           gaps_in = 2;
-          gaps_out = 1;
+          gaps_out = 4;
           border_size = 1;
           "col.active_border" = "0xffebbcba";
           "col.inactive_border" = "0xff6e6a86";
