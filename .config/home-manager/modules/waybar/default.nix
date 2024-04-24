@@ -9,8 +9,10 @@
     programs.waybar = {
       enable = true;
 
-      settings = {
-        mainBar = {
+      style = ./style.css;
+
+      settings = [
+        {
           # Settings
           "layer" = "top";
           "position" = "top";
@@ -148,9 +150,8 @@
             "icon-size" = 13;
             "spacing" = 8;
           };
-          style = ./style.css;
-        };
-      };
+        }
+      ];
     };
   };
 }
