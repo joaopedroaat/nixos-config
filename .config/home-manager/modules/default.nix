@@ -17,5 +17,6 @@
     ./rofi
     ./lf
     ./waybar
+    ./terminal-tools.nix
   ];
 }

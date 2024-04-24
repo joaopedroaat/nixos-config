@@ -69,6 +69,7 @@
   google-cloud.enable = true;
   openssl.enable = true;
   waybar.enable = true;
+  terminal-tools.enable = true;
 
   programs.lf.enable = true;
   programs.rofi.enable = true;
