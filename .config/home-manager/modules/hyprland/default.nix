@@ -5,7 +5,11 @@
   ...
 }: let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    waybar &
+    ${
+      if config.waybar.enable
+      then "waybar &"
+      else ""
+    }
 
     swww init &
 
@@ -47,7 +51,7 @@ in {
           "[workspace 1 silent] kitty -e tmux a"
           "[workspace 2 silent] firefox"
           "[workspace 3 silent] spotify"
-          "[workspace 4 silent] 1password"
+          "1password --silent"
         ];
 
         monitor = ",preferred,auto,auto";
@@ -59,6 +63,7 @@ in {
         "$windows" = "rofi -show window -show-icons";
         "$locker" = "hyprlock";
         "$passwordManager" = "1password";
+        "$calendar" = "kitty --class calcure -e calcure";
 
         # Default env vars.
         env = [
@@ -163,9 +168,14 @@ in {
           "center, title:(1Password)"
 
           "float, class:(pulsemixer)"
-          "move 1171 32, class:(pulsemixer)"
+          "move 1175 46, class:(pulsemixer)"
           "size 741 341, class:(pulsemixer)"
           "pin, class:(pulsemixer)"
+
+          "float, class:(calcure)"
+          "center, class:(calcure)"
+          "size 70% 70%, class:(calcure)"
+          "pin, class:(calcure)"
         ];
 
         # Bindings
@@ -188,6 +198,7 @@ in {
           "$mainMod, code:35, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | wl-copy" # SUPER + [
           "$mainMod SHIFT, code:35, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\"" # SUPER + SHIFT + [
           "$mainMod, code:51, exec, $passwordManager"
+          "$mainMod, C,exec, $calendar"
 
           # Move focus with mainMod + arrow keys
           "$mainMod, H, movefocus, l"
