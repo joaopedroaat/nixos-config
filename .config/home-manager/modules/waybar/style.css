@@ -1,101 +1,93 @@
 * {
-  border: none;
-  border-radius: 0;
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 13px;
-  min-height: 0;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 11px;
+  color: #908caa;
 }
 
 window#waybar {
   background: #191724;
-  color: #e0def4;
+  border: 1px solid #26233a;
+  border-radius: 6px;
 }
 
-#window {
-  font-weight: bold;
+/* Fix because padding was not being applied with window#waybar */
+.modules-left {
+  margin-left: 10px;
+}
+.modules-right {
+  margin-right: 10px;
 }
 
-/*
 #workspaces {
-    padding: 0 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 6px;
 }
-*/
 
 #workspaces button {
-  padding: 0 1px;
-  background: transparent;
-  color: #e0def4;
+  padding: 0px 8px;
 }
 
-#workspaces button.active {
-  color: #f6c177;
+#workspaces button:hover {
+  border-color: #26233a;
 }
 
-#submap {
-  background: #f6c177;
-  border-bottom: 3px solid #e0def4;
-}
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#network,
-#pulseaudio,
-#tray,
-#submap {
-  padding: 0 3px;
-  margin: 0 2px;
+/* For some reason the color only works if i use this */
+#workspaces button.active * {
+  color: #eb6f92;
 }
 
 #clock {
-  font-weight: bold;
+  margin-right: 20px;
 }
 
-/* #battery { */
-/* } */
-
-#battery icon {
-  color: red;
+#custom-nixos-icon {
+  font-size: 16px;
+  padding-right: 6px;
 }
 
-/* #battery.charging { */
-/* } */
-
-@keyframes blink {
-  to {
-    background-color: #ffffff;
-    color: black;
-  }
+#custom-power {
+  font-size: 16px;
+  padding-right: 1px;
 }
 
-#battery.warning:not(.charging) {
-  color: white;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+.power-group-children > * {
+  margin-right: 20px;
+  font-size: 16px;
 }
 
-/* #cpu { */
-/* } */
-
-/* #memory { */
-/* } */
-
-/* #network { */
-/* } */
-
-#network.disconnected {
-  background: #f53c3c;
+#custom-power {
+  color: #eb6f92;
 }
 
-/* #pulseaudio { */
-/* } */
+#custom-reboot {
+  color: #f6c177;
+}
 
-/* #pulseaudio.muted { */
-/* } */
+#pulseaudio {
+  margin-right: 20px;
+}
 
-/* #tray { */
-/* } */
+#pulseaudio-slider {
+  margin-right: 20px;
+  padding-left: 5px;
+}
+
+#pulseaudio-slider trough {
+  min-width: 80px;
+}
+
+#pulseaudio-slider highlight {
+  color: #c4a7e7;
+}
+
+#custom-tray-leader {
+  padding: 0 8px;
+}
+#tray {
+  margin-right: 20px;
+}
+
+#tray > * {
+  color: #908caa;
+}

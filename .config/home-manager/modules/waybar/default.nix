@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   config,
   ...
@@ -10,77 +11,146 @@
 
       settings = {
         mainBar = {
-          "layer" = "top"; # Waybar at top layer
-          "position" = "top"; # Waybar at the bottom of your screen
-          "height" = 24; # Waybar height
-          # "width"= 1366; # Waybar width
-          # Choose the order of the modules
-          "modules-left" = ["hyprland/workspaces" "hyprland/submap"];
-          "modules-center" = ["hyprland/window"];
-          "modules-right" = ["pulseaudio" "network" "cpu" "memory" "battery" "tray" "clock"];
+          # Settings
+          "layer" = "top";
+          "position" = "top";
+          "margin" = "4";
+          "height" = 13;
+          "reload_style_on_change" = true;
+          # Modules
+          "modules-left" = [
+            "custom/nixos-icon"
+            "hyprland/workspaces"
+            "hyprland/window"
+          ];
+          "modules-center" = [];
+          "modules-right" = [
+            "group/tray"
+            "group/volume"
+            "clock"
+            "group/power"
+          ];
+          # Modules settings
+          "custom/nixos-icon" = {
+            "format" = "";
+            "on-click-left" = "hyprctl dispatch workspace 1";
+          };
           "hyprland/workspaces" = {
-            "disable-scroll" = true;
-            "all-outputs" = false;
-            "format" = "{id} {icon}";
-            "format-icons" = {
-              "urgent" = "";
-              "default" = "";
+            "format" = "{icon} <span font_size=\"x-small\" rise=\"1pt\">-></span> {windows}";
+            "window-rewrite-default" = " ";
+            "window-rewrite" = {
+              "class<kitty>" = "󰆍 ";
+              "class<kitty> title<tmux*>" = "󰙀 ";
+              "class<kitty> title<nvim*>" = "󰈮 ";
+              "class<firefox>" = "󰈹 ";
+              "class<Spotify>" = "󰓇 ";
+              "class<discord>" = "󰙯 ";
+              "class<1Password>" = "󱦚 ";
             };
           };
-          "hyprland/submap" = {
-            "format" = "<span style=\"italic\">{}</span>";
-          };
-          "tray" = {
-            # "icon-size"= 21;
-            "spacing" = 10;
+          "hyprland/window" = {
+            "max-length" = 40;
           };
           "clock" = {
-            "format-alt" = "{:%Y-%m-%d}";
+            "format" = "{:%R}";
+            "format-alt" = "<span text_transform=\"capitalize\">{:%a, %d %b %Y}</span>";
+            "on-click-right" = "kitty --class calcure -e calcure";
           };
-          "cpu" = {
-            "format" = " {usage}%";
-          };
-          "memory" = {
-            "format" = " {}%";
-          };
-          "battery" = {
-            "bat" = "BAT0";
-            "states" = {
-              # "good"= 95;
-              "warning" = 30;
-              "critical" = 15;
+          # Pulseaudio
+          "group/volume" = {
+            "orientation" = "inherit";
+            "drawer" = {
+              "transition-duration" = 500;
+              "children-class" = "volume-group-children";
+              "transition-left-to-right" = true;
             };
-            "format" = "{capacity}% {icon}";
-            # "format-good"= ""; # An empty format will hide the module
-            # "format-full"= "";
-            "format-icons" = ["" "" "" "" ""];
-          };
-          "network" = {
-            # "interface"= "wlp2s0"; # (Optional) To force the use of this interface
-            "format-wifi" = " {essid}";
-            "format-ethernet" = "{ifname}: {ipaddr}/{cidr} ";
-            "format-disconnected" = "Disconnected ⚠";
+            "modules" = [
+              "pulseaudio"
+              "pulseaudio/slider"
+            ];
           };
           "pulseaudio" = {
-            #"scroll-step"= 1;
-            "format" = "{icon} {volume}%";
-            "format-bluetooth" = "{icon} {volume}% ";
-            "format-muted" = "";
+            "format" = "{volume}% {icon}";
+            "format-bluetooth" = "{volume}% {icon}";
+            "format-muted" = "<span foreground=\"#eb6f92\"> muted</span>";
             "format-icons" = {
-              "headphones" = "";
-              "handsfree" = "";
+              "headphone" = "";
+              "hands-free" = "";
               "headset" = "";
               "phone" = "";
               "portable" = "";
               "car" = "";
-              "default" = ["" ""];
+              "default" = [
+                ""
+                ""
+              ];
             };
-            "on-click" = "kitty --class pulsemixer -e pulsemixer";
+            "scroll-step" = 1;
+            "on-click" = "${pkgs.pulsemixer}/bin/pulsemixer --toggle-mute";
+            "on-click-right" = "kitty --class pulsemixer -e pulsemixer";
+            "ignored-sinks" = [
+              "Easy Effects Sink"
+            ];
           };
+          # Power
+          "group/power" = {
+            "orientation" = "inherit";
+            "drawer" = {
+              "transition-duration" = 500;
+              "children-class" = "power-group-children";
+              "transition-left-to-right" = false;
+            };
+            "modules" = [
+              "custom/power" # First element is the "group leader" and won't ever be hidden
+              "custom/quit"
+              "custom/lock"
+              "custom/reboot"
+            ];
+          };
+          "custom/quit" = {
+            "format" = "<span rise=\"4pt\">󰍃</span>";
+            "tooltip" = false;
+            "on-click" = "hyprctl dispatch exit";
+          };
+          "custom/lock" = {
+            "format" = "<span rise=\"4pt\">󰍁</span>";
+            "tooltip" = false;
+            "on-click" = "hyprlock";
+          };
+          "custom/reboot" = {
+            "format" = "<span rise=\"4pt\" >󰜉</span>";
+            "tooltip" = false;
+            "on-click" = "reboot";
+          };
+          "custom/power" = {
+            "format" = "<span rise=\"4pt\">󰐥</span>";
+            "tooltip" = false;
+            "on-click" = "shutdown now";
+          };
+          # Tray
+          "group/tray" = {
+            "orientation" = "inherit";
+            "drawer" = {
+              "transition-duration" = 500;
+              "children-class" = "tray-group-children";
+              "transition-left-to-right" = false;
+            };
+            "modules" = [
+              "custom/tray-leader"
+              "tray"
+            ];
+          };
+          "custom/tray-leader" = {
+            "format" = "󱕷";
+            "tooltip" = false;
+          };
+          "tray" = {
+            "icon-size" = 13;
+            "spacing" = 8;
+          };
+          style = ./style.css;
         };
       };
-
-      style = ./style.css;
     };
   };
 }
