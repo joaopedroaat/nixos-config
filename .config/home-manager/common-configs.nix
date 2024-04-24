@@ -56,7 +56,6 @@
 
   fish.enable = true;
   git.enable = true;
-  hyprlock.enable = true;
   kitty.enable = true;
   ssh.enable = true;
   tmux.enable = true;
