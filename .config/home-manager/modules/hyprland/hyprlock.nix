@@ -11,7 +11,7 @@ in {
       enable = true;
       backgrounds = [
         {
-          path = "${./hyprlock-background.png}";
+          path = "${./assets/hyprlock-background.png}";
           color = "rgba(25, 23, 36, 1)";
         }
       ];
@@ -22,19 +22,29 @@ in {
 
           size = {
             width = 300;
-            height = 50;
+            height = 20;
           };
 
-          outline_thickness = 2;
+          outline_thickness = 1;
 
-          outer_color = "rgb(235, 111, 146)";
+          outer_color = "rgb(38, 35, 58)";
           inner_color = "rgb(31, 29, 46)";
-          font_color = "rgb(224, 222, 244)";
+          font_color = "rgb(144, 140, 170)";
 
           fade_on_empty = true;
 
+          rounding = 6;
+
           dots_spacing = 0.3;
           dots_center = true;
+
+          position = {
+            x = 0;
+            y = 0;
+          };
+
+          halign = "center";
+          valign = "center";
         }
       ];
 
@@ -44,15 +54,15 @@ in {
           text = "$TIME";
           inherit font_family;
           font_size = 50;
-          color = "rgb(235, 111, 146)";
+          color = "rgb(110, 106, 134)";
 
           position = {
-            x = 0;
+            x = 20;
             y = 80;
           };
 
-          valign = "center";
-          halign = "center";
+          valign = "bottom";
+          halign = "left";
         }
       ];
     };

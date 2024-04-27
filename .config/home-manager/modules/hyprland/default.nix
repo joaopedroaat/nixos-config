@@ -12,6 +12,7 @@
     }
 
     swww init &
+    swww img ${./assets/hyprland-wallpaper.png}
 
     dunst &
   '';
@@ -49,8 +50,6 @@ in {
         exec-once = [
           ''${startupScript}/bin/start''
           "[workspace 1 silent] kitty -e tmux a"
-          "[workspace 2 silent] firefox"
-          "[workspace 3 silent] spotify"
           "1password --silent"
         ];
 
