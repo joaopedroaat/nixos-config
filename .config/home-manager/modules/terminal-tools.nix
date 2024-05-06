@@ -6,12 +6,14 @@
 }: {
   options.terminal-tools.enable = lib.mkEnableOption "terminal-tools";
   config = lib.mkIf config.terminal-tools.enable {
+    home.packages = with pkgs; [
+      fzf
+      libqalculate
+    ];
+
     #######
     # FZF #
     #######
-    home.packages = with pkgs; [
-      fzf
-    ];
     programs.fish = {
       functions = {
         fish_user_key_bindings = {
