@@ -13,11 +13,11 @@
             end
           '';
           sources = [
-            {name = "luasnip";}
             {name = "nvim_lsp";}
             {name = "path";}
             {name = "buffer";}
             {name = "dotenv";}
+            {name = "luasnip";}
           ];
           mapping = {
             "<C-Space>" = "cmp.mapping.complete()";
