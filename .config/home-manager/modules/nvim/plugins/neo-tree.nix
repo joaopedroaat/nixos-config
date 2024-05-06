@@ -7,7 +7,7 @@
     keymaps = [
       {
         key = "<leader>e";
-        action = "<cmd>Neotree reveal_force_cwd toggle<CR>";
+        action = "<cmd>Neotree reveal toggle<CR>";
         options = {desc = "Open Neotree";};
       }
     ];
