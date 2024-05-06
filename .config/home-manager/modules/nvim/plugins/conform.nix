@@ -6,7 +6,33 @@
         lspFallback = true;
         timeoutMs = 500;
       };
+      logLevel = "debug";
       notifyOnError = true;
+      formatters = {
+        prettierd = {
+          command = "${pkgs.prettierd}/bin/prettierd";
+        };
+
+        alejandra = {
+          command = "${pkgs.alejandra}/bin/alejandra";
+        };
+
+        yamlfmt = {
+          command = "${pkgs.yamlfmt}/bin/alejandra";
+        };
+
+        gofumpt = {
+          command = "${pkgs.gofumpt}/bin/gofumpt";
+        };
+
+        goimports-reviser = {
+          command = "${pkgs.goimports-reviser}/bin/goimports-reviser";
+        };
+
+        golines = {
+          command = "${pkgs.golines}/bin/golines";
+        };
+      };
       formattersByFt = {
         html = ["prettierd"];
         css = ["prettierd"];
@@ -21,14 +47,5 @@
         "*" = ["trim_whitespace"];
       };
     };
-
-    extraPackages = with pkgs; [
-      alejandra
-      prettierd
-      yamlfmt
-      gofumpt
-      goimports-reviser
-      golines
-    ];
   };
 }
