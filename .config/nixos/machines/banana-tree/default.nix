@@ -21,4 +21,7 @@
       amdvlk
     ];
   };
+
+  # Enable games
+  gaming.enable = true;
 }
