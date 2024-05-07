@@ -40,7 +40,7 @@
 
     iconTheme = {
       package = pkgs.rose-pine-icon-theme;
-      name = "rose-pine-icons";
+      name = "rose-pine";
     };
   };
 
