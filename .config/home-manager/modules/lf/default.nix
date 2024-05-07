@@ -8,12 +8,16 @@
       editor-open = ''$$EDITOR $f'';
       create = ''
         ''${{
-          printf "Enter name for new file or directory: "
-          read NAME
-          if [[ "$NAME" == */]] then
-            mkdir $NAME
+          # Prompt the user for input
+          read -p "Enter name for new file or directory: " input
+
+          # Check if the input ends with "/"
+          if [[ "$input" == */ ]]; then
+              # Create a directory
+              mkdir "$input"
           else
-            touch $NAME
+              # Create a file
+              touch "$input"
           fi
         }}
       '';
