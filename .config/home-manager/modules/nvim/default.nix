@@ -1,9 +1,11 @@
 {
   lib,
   config,
+  inputs,
   ...
 }: {
   imports = [
+    inputs.nixvim.homeManagerModules.nixvim
     ./plugins
     ./keymaps.nix
     ./options.nix

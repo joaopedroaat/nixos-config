@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }: let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
@@ -17,7 +18,10 @@
     dunst &
   '';
 in {
-  imports = [./hyprlock.nix];
+  imports = [
+    inputs.hyprland.homeManagerModules.default
+    ./hyprlock.nix
+  ];
 
   options.hyprland.enable = lib.mkEnableOption "Hyprland";
   config = lib.mkIf config.hyprland.enable {

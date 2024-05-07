@@ -17,5 +17,6 @@
     ./auto-session.nix
     ./tailwindcss-colors.nix
     ./lazydocker.nix
+    ./live-server.nix
   ];
 }

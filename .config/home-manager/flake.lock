@@ -370,6 +370,22 @@
         "type": "github"
       }
     },
+    "live-server-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1708272587,
+        "narHash": "sha256-NxhBFnNkjAZG0hXvtTLTkD6lWu0GEuIliGDPziLWCck=",
+        "owner": "barrett-ruth",
+        "repo": "live-server.nvim",
+        "rev": "0b4d31c665fa69b3e68d6da5765fab5ccf88b0c0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "barrett-ruth",
+        "repo": "live-server.nvim",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -515,6 +531,7 @@
         "hyprland": "hyprland",
         "hyprlock": "hyprlock",
         "lazydocker-nvim": "lazydocker-nvim",
+        "live-server-nvim": "live-server-nvim",
         "nixpkgs": "nixpkgs_3",
         "nixvim": "nixvim",
         "spicetify-nix": "spicetify-nix"

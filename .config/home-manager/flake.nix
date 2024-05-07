@@ -21,6 +21,11 @@
       flake = false;
     };
 
+    live-server-nvim = {
+      url = "github:barrett-ruth/live-server.nvim";
+      flake = false;
+    };
+
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
     hyprlock.url = "github:hyprwm/Hyprlock";
@@ -35,10 +40,8 @@
     nixvim,
     hyprland,
     hyprlock,
-    spicetify-nix,
-    lazydocker-nvim,
     ...
-  }: let
+  } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
@@ -50,16 +53,12 @@
       modules = [
         ./common-configs.nix
         ./machines/banana-tree/home.nix
-        nixvim.homeManagerModules.nixvim
-        hyprland.homeManagerModules.default
-        hyprlock.homeManagerModules.hyprlock
       ];
 
       # Optionally use extraSpecialArgs
       # to pass through arguments to home.nix
       extraSpecialArgs = {
-        inherit spicetify-nix;
-        inherit lazydocker-nvim;
+        inherit inputs;
       };
     };
   };

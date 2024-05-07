@@ -1,6 +1,6 @@
 {
   pkgs,
-  lazydocker-nvim,
+  inputs,
   ...
 }: {
   nixpkgs = {
@@ -11,7 +11,7 @@
           // {
             lazydocker = prev.vimUtils.buildVimPlugin {
               name = "lazydocker";
-              src = lazydocker-nvim;
+              src = inputs.lazydocker-nvim;
             };
           };
       })

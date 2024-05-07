@@ -1,10 +1,12 @@
 {
   lib,
   config,
+  inputs,
   ...
 }: let
   font_family = "JetBrainsMono Nerd Font";
 in {
+  imports = [inputs.hyprlock.homeManagerModules.hyprlock];
   options.hyprlock.enable = lib.mkEnableOption "Hyprlock";
   config = lib.mkIf config.hyprlock.enable {
     programs.hyprlock = {
