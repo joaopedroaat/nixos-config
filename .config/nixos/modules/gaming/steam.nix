@@ -18,6 +18,8 @@
       mangohud
       # Proton
       protonup
+      # Bottles
+      bottles
     ];
 
     # Game-mode
@@ -27,7 +29,7 @@
     # Ex: gamemoderun %command%, mangohud %command%, gamescope %command%
 
     # Installation path for prontonup needs to be specified
-    home.sessionVariables = {
+    environment.sessionVariables = {
       STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
     };
   };

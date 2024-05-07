@@ -48,6 +48,9 @@
               "class<Spotify>" = "󰓇 ";
               "class<discord>" = "󰙯 ";
               "class<1Password>" = "󱦚 ";
+              "class<steam>" = "󰓓 ";
+              "class<com.usebottles.bottles>" = "󱄮 ";
+              "class<lutris>" = " ";
             };
           };
           "hyprland/window" = {

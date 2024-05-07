@@ -66,6 +66,9 @@
       "1password"
       "1password-gui"
       "1password-cli"
+      "steam"
+      "steam-original"
+      "steam-run"
     ];
 
   # List packages installed in system profile. To search, run:
