@@ -58,8 +58,9 @@ in {
         # Variables
         "$terminal" = "kitty";
         "$fileManager" = "kitty --class filemanager -e lf";
-        "$menu" = "rofi -show drun -show-icons";
-        "$windows" = "rofi -show window -show-icons";
+        "$menu_drun" = "rofi -show drun -show-icons";
+        "$menu_run" = "rofi -show run -show-icons";
+        "$menu_windows" = "rofi -show window -show-icons";
         "$locker" = "hyprlock";
         "$passwordManager" = "1password";
         "$calendar" = "kitty --class calcure -e calcure";
@@ -189,14 +190,22 @@ in {
           "$mainMod SHIFT, E, exit"
           "$mainMod, E, exec, $fileManager"
           "$mainMod SHIFT, SPACE, togglefloating"
-          "$mainMod, D, exec, $menu"
-          "$mainMod, Menu, exec, $menu"
-          "$mainMod, SPACE, exec, $windows"
+
+          # ROFI
+          "$mainMod, D, exec, $menu_drun"
+          "$mainMod SHIFT, D, exec, $menu_run"
+          "$mainMod, code:135, exec, $menu_drun"
+          "$mainMod SHIFT, code:135, exec, $menu_run"
+          "$mainMod, SPACE, exec, $menu_windows"
+
           "$mainMod, P, pseudo, # dwindle"
           "$mainMod, T, togglesplit, # dwindle"
-          "$mainMod, code:35, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | wl-copy" # SUPER + [
-          "$mainMod SHIFT, code:35, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\"" # SUPER + SHIFT + [
+          # Printscreen
+          "$mainMod, TAB, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\""
+          "$mainMod SHIFT, TAB, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | wl-copy" # Goes to clipboard
+          # 1Password
           "$mainMod, code:51, exec, $passwordManager"
+          # Calendar
           "$mainMod, C,exec, $calendar"
 
           # Move focus with mainMod + arrow keys
@@ -248,6 +257,10 @@ in {
           # Scroll through existing workspaces with mainMod + scroll
           "$mainMod, mouse_down, workspace, e+1"
           "$mainMod, mouse_up, workspace, e-1"
+
+          # Scroll through existing workspaces with mainMod + ], mainMod + [
+          "$mainMod, code:35, workspace, e+1"
+          "$mainMod, code:34, workspace, e-1"
         ];
 
         bindm = [
