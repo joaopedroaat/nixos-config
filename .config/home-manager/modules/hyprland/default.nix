@@ -35,16 +35,11 @@ in {
       wl-clipboard
       # Web Browser
       firefox
-      # Calendar
-      calcure
-      # Pulsemixer
-      pulsemixer
     ];
 
-    # Waybar
+    calcure.enable = true;
+    pulsemixer.enable = true;
     waybar.enable = true;
-
-    # Hyprlock
     hyprlock.enable = true;
 
     wayland.windowManager.hyprland = {
