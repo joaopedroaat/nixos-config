@@ -51,6 +51,7 @@
               "class<steam>" = "󰓓 ";
               "class<com.usebottles.bottles>" = "󱄮 ";
               "class<lutris>" = " ";
+              "class<Gimp.*>" = " ";
             };
           };
           "hyprland/window" = {

@@ -18,5 +18,6 @@
     ./lf
     ./waybar
     ./terminal-tools.nix
+    ./gimp.nix
   ];
 }
