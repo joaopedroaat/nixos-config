@@ -17,7 +17,6 @@
     ./rofi
     ./lf
     ./waybar
-    ./terminal-tools.nix
     ./gimp.nix
     ./terminal-tools
   ];
