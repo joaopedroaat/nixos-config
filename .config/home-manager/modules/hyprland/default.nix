@@ -25,18 +25,10 @@ in {
 
   options.hyprland.enable = lib.mkEnableOption "Hyprland";
   config = lib.mkIf config.hyprland.enable {
-    home.packages = with pkgs; [
-      # Notifications
-      libnotify
-      dunst
-      # Wallpaper
-      swww
-      # Clipboard
-      wl-clipboard
-      # Web Browser
-      firefox
-    ];
-
+    swww.enable = true;
+    wl-clipboard.enable = true;
+    notifications.enable = true;
+    firefox.enable = true;
     calcure.enable = true;
     pulsemixer.enable = true;
     waybar.enable = true;

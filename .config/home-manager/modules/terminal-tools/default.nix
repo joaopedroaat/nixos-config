@@ -4,7 +4,15 @@
   pkgs,
   ...
 }: {
-  imports = [./fzf.nix ./libqcalculate.nix ./calcure.nix ./pulsemixer.nix];
+  imports = [
+    ./fzf.nix
+    ./libqcalculate.nix
+    ./calcure.nix
+    ./pulsemixer.nix
+    ./wl-clipboard.nix
+    ./swww.nix
+  ];
+
   options.terminal-tools.enable = lib.mkEnableOption "Terminal tools";
   config = lib.mkIf config.terminal-tools.enable {
     fzf.enable = true;

@@ -19,5 +19,7 @@
     ./waybar
     ./gimp.nix
     ./terminal-tools
+    ./firefox.nix
+    ./notifications.nix
   ];
 }
