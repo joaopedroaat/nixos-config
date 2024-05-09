@@ -67,7 +67,6 @@
   insomnia.enable = true;
   google-cloud.enable = true;
   openssl.enable = true;
-  waybar.enable = true;
   terminal-tools.enable = true;
   gimp.enable = true;
 
