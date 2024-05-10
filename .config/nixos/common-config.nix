@@ -45,7 +45,7 @@
   users.users.joaopedroaat = {
     isNormalUser = true;
     description = "João Pedro Almeida de Andrade Tenório";
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = ["networkmanager" "wheel" "docker" "scanner" "lp"];
   };
 
   # Fonts
@@ -84,7 +84,7 @@
   docker.enable = true;
   fish.enable = true;
   hyprland.enable = true;
-  printing.enable = true;
+  office.enable = true;
 
   # Run unpatched dynamic binaries on NixOS.
   programs.nix-ld = {
