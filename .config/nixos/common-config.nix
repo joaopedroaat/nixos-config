@@ -61,15 +61,7 @@
   ];
 
   # Unfree packages
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "1password"
-      "1password-gui"
-      "1password-cli"
-      "steam"
-      "steam-original"
-      "steam-run"
-    ];
+  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
