@@ -27,6 +27,7 @@
         gopls.enable = true;
         dockerls.enable = true;
         jsonls.enable = true;
+        html.enable = true;
       };
     };
   };
