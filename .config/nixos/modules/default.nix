@@ -5,5 +5,6 @@
     ./docker.nix
     ./hyprland.nix
     ./gaming/default.nix
+    ./printing.nix
   ];
 }

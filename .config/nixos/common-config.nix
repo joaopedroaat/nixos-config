@@ -84,6 +84,7 @@
   docker.enable = true;
   fish.enable = true;
   hyprland.enable = true;
+  printing.enable = true;
 
   # Run unpatched dynamic binaries on NixOS.
   programs.nix-ld = {
