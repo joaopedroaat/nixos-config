@@ -49,6 +49,7 @@
               "class<discord>" = "󰙯 ";
               "class<1Password>" = "󱦚 ";
               "class<steam>" = "󰓓 ";
+              "class<steam_app.*>" = " ";
               "class<com.usebottles.bottles>" = "󱄮 ";
               "class<lutris>" = " ";
               "class<Gimp.*>" = " ";
