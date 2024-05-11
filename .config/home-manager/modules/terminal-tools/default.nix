@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   imports = [
@@ -11,6 +10,8 @@
     ./pulsemixer.nix
     ./wl-clipboard.nix
     ./swww.nix
+    ./imagemagick.nix
+    ./compression.nix
   ];
 
   options.terminal-tools.enable = lib.mkEnableOption "Terminal tools";
@@ -19,5 +20,7 @@
     libqcalculate.enable = true;
     calcure.enable = true;
     pulsemixer.enable = true;
+    imagemagick.enable = true;
+    compression.enable = true;
   };
 }
