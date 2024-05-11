@@ -8,8 +8,6 @@
     ./libqcalculate.nix
     ./calcure.nix
     ./pulsemixer.nix
-    ./wl-clipboard.nix
-    ./swww.nix
     ./imagemagick.nix
     ./compression.nix
   ];

@@ -15,6 +15,8 @@
     ./rofi/default.nix
     ./waybar/default.nix
     ./kitty.nix
+    ./swww.nix
+    ./wl-clipboard.nix
   ];
   options.desktop.enable = lib.mkEnableOption "Desktop";
   config = lib.mkIf config.desktop.enable {
@@ -28,5 +30,7 @@
     waybar.enable = true;
     kitty.enable = true;
     notifications.enable = true;
+    swww.enable = true;
+    wl-clipboard.enable = true;
   };
 }
