@@ -54,24 +54,20 @@
 
   imports = [./modules];
 
+  desktop.enable = true;
   fish.enable = true;
   git.enable = true;
   kitty.enable = true;
   ssh.enable = true;
   tmux.enable = true;
   nvim.enable = true;
-  hyprland.enable = true;
-  discord.enable = true;
   volta.enable = true;
   golang.enable = true;
-  insomnia.enable = true;
   google-cloud.enable = true;
   openssl.enable = true;
   terminal-tools.enable = true;
-  gimp.enable = true;
 
   programs.lf.enable = true;
-  programs.rofi.enable = true;
 
   programs.home-manager.enable = true;
 }

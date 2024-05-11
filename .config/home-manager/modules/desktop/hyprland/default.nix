@@ -25,15 +25,6 @@ in {
 
   options.hyprland.enable = lib.mkEnableOption "Hyprland";
   config = lib.mkIf config.hyprland.enable {
-    swww.enable = true;
-    wl-clipboard.enable = true;
-    notifications.enable = true;
-    firefox.enable = true;
-    calcure.enable = true;
-    pulsemixer.enable = true;
-    waybar.enable = true;
-    hyprlock.enable = true;
-
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
