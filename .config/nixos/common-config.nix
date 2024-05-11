@@ -56,6 +56,9 @@
 
     font-awesome
 
+    # Microsoft fonts
+    corefonts
+
     # NerdFonts
     (nerdfonts.override {fonts = ["JetBrainsMono" "FiraCode"];})
   ];
