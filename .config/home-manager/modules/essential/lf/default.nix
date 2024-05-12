@@ -33,6 +33,25 @@
             ${pkgs.swww}/bin/swww img $f
           }}
         '';
+        fzfJump = ''
+          ''${{
+            res="$(find . -maxdepth 3 | ${pkgs.fzf}/bin/fzf --reverse --header='Jump to location')"
+            if [ -n "$res" ]; then
+              if [ -d "$res" ]; then
+                  cmd="cd"
+              else
+                  cmd="select"
+              fi
+              res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+              lf -remote "send $id $cmd \"$res\""
+            fi
+          }}
+        '';
+        batFile = ''
+          ''${{
+            ${pkgs.bat}/bin/bat --paging=always --theme="base16" "$f"
+          }}
+        '';
       };
 
       keybindings = {
@@ -54,24 +73,27 @@
         bg = "setWallpaper";
 
         # Movement
+        "g/" = "cd /";
+        "g~" = "cd";
+        gg = "cd";
         gd = "cd ~/Documents/";
         gD = "cd ~/Downloads/";
         gp = "cd ~/Pictures/";
         gP = "cd ~/Projects/";
+
+        # Search and Jump
+        f = "fzfJump";
 
         "`" = "mark-load";
         "\\'" = "mark-load";
 
         do = "dragon-out";
 
-        "g~" = "cd";
-        gh = "cd";
-        "g/" = "/";
-
+        # Open editor
         ee = "editor-open";
-        V = ''$${pkgs.bat}/bin/bat --paging=always --theme=gruvbox "$f"'';
 
-        # ...
+        # Preview file
+        V = "batFile";
       };
 
       settings = {
