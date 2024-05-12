@@ -54,12 +54,8 @@
 
   imports = [./modules];
 
+  essential.enable = true;
   desktop.enable = true;
-  fish.enable = true;
-  git.enable = true;
-  ssh.enable = true;
-  tmux.enable = true;
-  nvim.enable = true;
   development.enable = true;
   terminal-tools.enable = true;
 
