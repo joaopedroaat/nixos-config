@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   imports = [
@@ -17,6 +16,7 @@
     ./kitty.nix
     ./swww.nix
     ./wl-clipboard.nix
+    ./xdragon.nix
   ];
   options.desktop.enable = lib.mkEnableOption "Desktop";
   config = lib.mkIf config.desktop.enable {
@@ -32,5 +32,6 @@
     notifications.enable = true;
     swww.enable = true;
     wl-clipboard.enable = true;
+    xdragon.enable = true;
   };
 }
