@@ -39,7 +39,7 @@ in {
 
         # Variables
         "$terminal" = "kitty";
-        "$fileManager" = "kitty --class filemanager -e lf";
+        "$fileManager" = "kitty -e lf";
         "$menu_drun" = "rofi -show drun -show-icons";
         "$menu_run" = "rofi -show run -show-icons";
         "$menu_windows" = "rofi -show window -show-icons";
@@ -141,9 +141,9 @@ in {
         windowrulev2 = [
           "suppressevent maximize, class:.*" # You'll probably like this.
 
-          "float,class:(filemanager)"
-          "center(1),class:(filemanager)"
-          "size 960 540,class:(filemanager)"
+          "float,class:(kitty),title:(lf)"
+          "center(1),class:(kitty),title:(lf)"
+          "size 960 540,class:(kitty),title:(lf)"
 
           "float, title:(1Password)"
           "size 70% 70%, title:(1Password)"
