@@ -10,6 +10,7 @@
     ./pulsemixer.nix
     ./imagemagick.nix
     ./compression.nix
+    ./netcat.nix
   ];
 
   options.terminal-tools.enable = lib.mkEnableOption "Terminal tools";
@@ -20,5 +21,6 @@
     pulsemixer.enable = true;
     imagemagick.enable = true;
     compression.enable = true;
+    netcat.enable = true;
   };
 }
