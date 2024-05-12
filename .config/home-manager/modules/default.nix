@@ -4,5 +4,6 @@
     ./terminal-tools
     ./development
     ./essential
+    ./theme
   ];
 }
