@@ -11,8 +11,13 @@
     programs.lf = {
       enable = true;
       commands = {
-        dragon-out = ''%${pkgs.xdragon}/bin/xdragon -a -x "$fx"'';
+        # Drag and drop
+        dragon-out = ''%${pkgs.xdragon}/bin/xdragon -a -x $fx'';
+
+        # Open on editor
         editor-open = ''$$EDITOR $f'';
+
+        # Create directory or file
         create = ''
           ''${{
             # Prompt the user for input
@@ -28,11 +33,15 @@
             fi
           }}
         '';
+
+        # Set current desktop wallpaper
         setWallpaper = ''
           ''${{
             ${pkgs.swww}/bin/swww img $f
           }}
         '';
+
+        # Search files and jump to it
         fzfJump = ''
           ''${{
             res="$(find . -maxdepth 3 | ${pkgs.fzf}/bin/fzf --reverse --header='Jump to location')"
@@ -47,6 +56,8 @@
             fi
           }}
         '';
+
+        # Preview file on bat
         batFile = ''
           ''${{
             ${pkgs.bat}/bin/bat --paging=always --theme="base16" "$f"
