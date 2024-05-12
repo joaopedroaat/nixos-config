@@ -11,6 +11,7 @@
     ./imagemagick.nix
     ./compression.nix
     ./netcat.nix
+    ./bat.nix
   ];
 
   options.terminal-tools.enable = lib.mkEnableOption "Terminal tools";
@@ -22,5 +23,6 @@
     imagemagick.enable = true;
     compression.enable = true;
     netcat.enable = true;
+    bat.enable = true;
   };
 }
