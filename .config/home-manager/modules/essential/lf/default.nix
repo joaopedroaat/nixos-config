@@ -82,7 +82,7 @@
             fi
 
             for zipfile in $fx;
-              do unzip -j $zipfile;
+              do ${pkgs.unzip}/bin/unzip -j $zipfile;
             done
           }}
         '';
