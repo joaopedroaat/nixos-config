@@ -61,7 +61,6 @@
   ssh.enable = true;
   tmux.enable = true;
   nvim.enable = true;
-  volta.enable = true;
   golang.enable = true;
   google-cloud.enable = true;
   openssl.enable = true;
