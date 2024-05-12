@@ -44,6 +44,7 @@
               "class<kitty>" = "󰆍 ";
               "class<kitty> title<tmux*>" = "󰙀 ";
               "class<kitty> title<nvim*>" = "󰈮 ";
+              "class<kitty> title<lf>" = "󰉋 ";
               "class<firefox>" = "󰈹 ";
               "class<Spotify>" = "󰓇 ";
               "class<discord>" = "󰙯 ";
