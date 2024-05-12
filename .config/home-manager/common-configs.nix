@@ -57,13 +57,10 @@
   desktop.enable = true;
   fish.enable = true;
   git.enable = true;
-  kitty.enable = true;
   ssh.enable = true;
   tmux.enable = true;
   nvim.enable = true;
-  golang.enable = true;
-  google-cloud.enable = true;
-  openssl.enable = true;
+  development.enable = true;
   terminal-tools.enable = true;
 
   programs.lf.enable = true;
