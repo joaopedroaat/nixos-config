@@ -63,29 +63,6 @@
             ${pkgs.bat}/bin/bat --paging=always --theme="base16" "$f"
           }}
         '';
-
-        # Zip
-        zipFile = ''
-          ''${{
-            read -p "Zip as: " zipname
-            ${pkgs.zip}/bin/zip $zipname $fx
-          }}
-        '';
-
-        #Unzip
-        unzipFile = ''
-          ''${{
-            read -p "Unzip '$fx'? [y/N]" -n 1 -r
-            if [[ ! $REPLY =~ ^[Yy]$ ]]
-            then
-                exit 1
-            fi
-
-            for zipfile in $fx;
-              do ${pkgs.unzip}/bin/unzip -j $zipfile;
-            done
-          }}
-        '';
       };
 
       keybindings = {
@@ -128,10 +105,6 @@
 
         # Preview file
         V = "batFile";
-
-        # Zip
-        zz = "zipFile";
-        zu = "unzipFile";
       };
 
       settings = {
