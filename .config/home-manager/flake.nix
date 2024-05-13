@@ -62,6 +62,7 @@
       # Optionally use extraSpecialArgs
       # to pass through arguments to home.nix
       extraSpecialArgs = {
+        hostname = "banana-tree";
         inherit inputs;
       };
     };
@@ -79,6 +80,7 @@
       # Optionally use extraSpecialArgs
       # to pass through arguments to home.nix
       extraSpecialArgs = {
+        hostname = "banana-leaf";
         inherit inputs;
       };
     };

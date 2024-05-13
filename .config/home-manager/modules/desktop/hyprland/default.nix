@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  hostname,
   inputs,
   ...
 }: let
@@ -56,8 +57,14 @@ in {
 
         # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
         input = {
-          kb_layout = "us,us";
-          kb_variant = ",intl";
+          kb_layout =
+            if hostname == "banana-tree"
+            then "us,us"
+            else "br";
+          kb_variant =
+            if hostname == "banana-tree"
+            then ",intl"
+            else "";
           kb_model = "";
           kb_options = "grp:alts_toggle";
           kb_rules = "";
