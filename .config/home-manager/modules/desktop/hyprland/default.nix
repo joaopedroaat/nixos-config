@@ -25,6 +25,7 @@ in {
 
   options.hyprland.enable = lib.mkEnableOption "Hyprland";
   config = lib.mkIf config.hyprland.enable {
+    hyprlock.enable = true;
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
@@ -167,7 +168,7 @@ in {
         bind = [
           # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
           "$mainMod, RETURN, exec, $terminal"
-          "$mainMod SHIFT, code:20, exec, $locker" # SUPER + SHIFT + _
+          "$mainMod SHIFT, C, exec, $locker" # SUPER + SHIFT + _
           "$mainMod SHIFT, Q, killactive"
           "$mainMod SHIFT, E, exit"
           "$mainMod, E, exec, $fileManager"
