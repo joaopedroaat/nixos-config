@@ -18,6 +18,14 @@
           ./machines/banana-tree
         ];
       };
+      banana-leaf = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = attrs;
+        modules = [
+          ./common-config.nix
+          ./machines/banana-leaf
+        ];
+      };
     };
   };
 }
