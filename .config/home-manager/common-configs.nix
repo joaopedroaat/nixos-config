@@ -1,8 +1,4 @@
-{
-  lib,
-  config,
-  ...
-}: {
+{config, ...}: {
   home.username = "joaopedroaat";
   home.homeDirectory = "/home/joaopedroaat";
 
@@ -40,14 +36,6 @@
       };
     };
   };
-
-  # Unfree packages
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      # Add additional package names here
-      "discord"
-      "spotify"
-    ];
 
   imports = [./modules];
 

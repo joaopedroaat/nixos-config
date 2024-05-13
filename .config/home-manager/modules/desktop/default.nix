@@ -4,15 +4,15 @@
   ...
 }: {
   imports = [
-    ./hyprland/default.nix
+    ./hyprland
     ./gimp.nix
     ./discord.nix
-    ./firefox.nix
+    ./firefox
     ./insomnia.nix
     ./notifications.nix
     ./spicetify.nix
-    ./rofi/default.nix
-    ./waybar/default.nix
+    ./rofi
+    ./waybar
     ./kitty.nix
     ./swww.nix
     ./wl-clipboard.nix

@@ -32,18 +32,22 @@
 
     # Spicetify
     spicetify-nix.url = "github:the-argus/spicetify-nix";
+
+    # NUR Repository
+    nur.url = "github:nix-community/nur";
   };
 
   outputs = {
     nixpkgs,
     home-manager,
-    nixvim,
-    hyprland,
-    hyprlock,
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = import nixpkgs {
+      overlays = [inputs.nur.overlay];
+      inherit system;
+      config.allowUnfree = true;
+    };
   in {
     homeConfigurations."joaopedroaat@banana-tree" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
