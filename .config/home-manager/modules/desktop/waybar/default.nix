@@ -30,6 +30,7 @@
             "group/tray"
             "group/volume"
             "clock"
+            "battery"
             "group/power"
           ];
           # Modules settings
@@ -155,6 +156,17 @@
           "tray" = {
             "icon-size" = 13;
             "spacing" = 8;
+          };
+          "battery" = {
+            #"bat" = "BAT2";
+            "interval" = 60;
+            "states" = {
+              "warning" = 30;
+              "critical" = 15;
+            };
+            "format" = "{capacity}% {icon}";
+            "format-icons" = ["" "" "" "" ""];
+            "max-length" = 25;
           };
         }
       ];
