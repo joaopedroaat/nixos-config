@@ -12,6 +12,7 @@
     ./compression.nix
     ./netcat.nix
     ./bat.nix
+    ./tree.nix
   ];
 
   options.terminal-tools.enable = lib.mkEnableOption "Terminal tools";
@@ -24,5 +25,6 @@
     compression.enable = true;
     netcat.enable = true;
     bat.enable = true;
+    tree.enable = true;
   };
 }
