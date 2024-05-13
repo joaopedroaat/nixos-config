@@ -3,7 +3,16 @@
   lib,
   config,
   ...
-}: {
+}: let
+  src = {
+    kitty = "${pkgs.kitty}/bin/kitty";
+    xdragon = "${pkgs.xdragon}/bin/xdragon";
+    xdg-open = "${pkgs.xdg-utils}/bin/xdg-open";
+    swww = "${pkgs.swww}/bin/swww";
+    fzf = "${pkgs.fzf}/bin/fzf";
+    bat = "${pkgs.bat}/bin/bat";
+  };
+in {
   options.lf.enable = lib.mkEnableOption "lf";
   config = lib.mkIf config.lf.enable {
     xdg.configFile."lf/icons".source = ./icons;
@@ -13,6 +22,20 @@
       commands = {
         # Drag and drop
         dragon-out = ''%${pkgs.xdragon}/bin/xdragon -a -x $fx'';
+
+        open-terminal = ''
+          ''${{
+            setsid ${src.kitty} $PWD >/dev/null 2>&1 &
+          }}
+        '';
+
+        open-xdg = ''
+          ''${{
+            for file in $fx; do
+                setsid ${src.xdg-open} "$file" >/dev/null 2>&1 &
+            done
+          }}
+        '';
 
         # Open on editor
         editor-open = ''$$EDITOR $f'';
@@ -37,14 +60,14 @@
         # Set current desktop wallpaper
         setWallpaper = ''
           ''${{
-            ${pkgs.swww}/bin/swww img $f
+            ${src.swww} img $f
           }}
         '';
 
         # Search files and jump to it
         fzfJump = ''
           ''${{
-            res="$(find . -maxdepth 3 | ${pkgs.fzf}/bin/fzf --reverse --header='Jump to location')"
+            res="$(find . -maxdepth 3 | ${src.fzf} --reverse --header='Jump to location')"
             if [ -n "$res" ]; then
               if [ -d "$res" ]; then
                   cmd="cd"
@@ -60,15 +83,13 @@
         # Preview file on bat
         batFile = ''
           ''${{
-            ${pkgs.bat}/bin/bat --paging=always --theme="base16" "$f"
+            ${src.bat} --paging=always --theme="base16" "$f"
           }}
         '';
       };
 
       keybindings = {
-        # Unbind
         "\\\"" = "";
-        o = "";
         d = "";
 
         # Basic functions
@@ -99,6 +120,12 @@
         "\\'" = "mark-load";
 
         do = "dragon-out";
+
+        # Open xdg
+        oo = "open-xdg";
+
+        # Open folder on terminal
+        ot = "open-terminal";
 
         # Open editor
         ee = "editor-open";
