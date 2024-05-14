@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  hostname,
   ...
 }: {
   options.kitty.enable = lib.mkEnableOption "Kitty";
@@ -10,6 +11,10 @@
 
       font = {
         name = "JetBrainsMono Nerd Font";
+        size =
+          if hostname == "banana-tree"
+          then null
+          else 9;
       };
 
       theme = "Rosé Pine";
