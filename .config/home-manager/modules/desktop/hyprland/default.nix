@@ -66,13 +66,16 @@ in {
             then ",intl"
             else "";
           kb_model = "";
-          kb_options = "grp:alts_toggle";
+          kb_options =
+            if hostname == "banana-tree"
+            then "grp:alts_toggle"
+            else "";
           kb_rules = "";
 
           follow_mouse = 1;
 
           touchpad = {
-            natural_scroll = "no";
+            natural_scroll = "yes";
           };
 
           sensitivity = 0; # -1.0 to 1.0, 0 means no modification.
