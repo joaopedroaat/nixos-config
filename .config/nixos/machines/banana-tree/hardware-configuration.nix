@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
@@ -12,7 +11,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usbhid" "sd_mod"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
@@ -27,7 +26,12 @@
     fsType = "vfat";
   };
 
-  fileSystems."/mnt/hd1" = {
+  fileSystems."/mnt/PENDRIVE" = {
+    device = "/dev/disk/by-uuid/1020-5A28";
+    fsType = "exfat";
+  };
+
+  fileSystems."/mnt/HD1" = {
     device = "/dev/disk/by-uuid/f6ae5e60-84db-413f-ba1b-0ce9c5e12463";
     fsType = "ext4";
   };
@@ -41,6 +45,7 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.br-bda0325e07c6.useDHCP = lib.mkDefault true;
   # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp5s0.useDHCP = lib.mkDefault true;
