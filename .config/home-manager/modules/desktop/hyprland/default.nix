@@ -37,7 +37,10 @@ in {
           "1password --silent"
         ];
 
-        monitor = ",preferred,0x0,1.2";
+        monitor =
+          if hostname == "banana-tree"
+          then ",preferred,0x0,1"
+          else ",preferred,0x0,1.2";
 
         # Variables
         "$terminal" = "kitty";
