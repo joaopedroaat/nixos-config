@@ -9,7 +9,7 @@
     ./discord.nix
     ./firefox
     ./insomnia.nix
-    ./notifications.nix
+    ./notifications
     ./spicetify.nix
     ./rofi
     ./waybar.nix
