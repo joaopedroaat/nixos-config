@@ -76,7 +76,7 @@ in {
 
           touchpad = {
             natural_scroll = "yes";
-            scroll_factor = "0.1";
+            scroll_factor = "0.2";
             tap-and-drag = "no";
             clickfinger_behavior = "yes";
           };
