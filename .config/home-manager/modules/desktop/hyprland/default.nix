@@ -14,7 +14,7 @@
     }
 
     swww init &
-    swww img ${./assets/hyprland-wallpaper.png}
+    swww img ${./assets/hyprland-wallpaper.png} &
 
     dunst &
   '';
