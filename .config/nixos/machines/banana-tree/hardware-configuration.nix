@@ -11,7 +11,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usbhid" "sd_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
@@ -24,11 +24,6 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/5205-FAFB";
     fsType = "vfat";
-  };
-
-  fileSystems."/mnt/PENDRIVE" = {
-    device = "/dev/disk/by-uuid/1020-5A28";
-    fsType = "exfat";
   };
 
   fileSystems."/mnt/HD1" = {
