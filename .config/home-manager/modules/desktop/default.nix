@@ -12,7 +12,7 @@
     ./notifications.nix
     ./spicetify.nix
     ./rofi
-    ./waybar
+    ./waybar.nix
     ./kitty.nix
     ./swww.nix
     ./wl-clipboard.nix
