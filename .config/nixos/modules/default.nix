@@ -4,7 +4,8 @@
     ./fish.nix
     ./docker.nix
     ./hyprland.nix
-    ./gaming/default.nix
-    ./office/default.nix
+    ./sync.nix
+    ./gaming
+    ./office
   ];
 }
