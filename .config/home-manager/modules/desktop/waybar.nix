@@ -157,15 +157,15 @@
           };
           "battery" = {
             #"bat" = "BAT2";
-            "interval" = 60;
+            "interval" = 1;
             "states" = {
               "warning" = 30;
               "critical" = 15;
             };
             "format" = "{capacity}% {icon}";
-            "format-charging" = "{capacity}% {icon} 󰠠";
-            "format-plugged" = "{capacity}% {icon}  <span size=\"small\"></span>";
-            "format-full" = "{capacity}% {icon}  <span size=\"small\"></span>";
+            "format-charging" = "{capacity}% {icon} 󱐋";
+            "format-plugged" = "{capacity}% {icon} <span size=\"x-small\"></span>";
+            "format-full" = "{capacity}% {icon} <span size=\"x-small\"></span>";
             "format-icons" = ["" "" "" "" ""];
             "max-length" = 25;
           };
