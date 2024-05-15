@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  hostname,
   ...
 }: {
   options.waybar.enable = lib.mkEnableOption "Waybar";
@@ -164,6 +163,9 @@
               "critical" = 15;
             };
             "format" = "{capacity}% {icon}";
+            "format-charging" = "{capacity}% {icon} 󰠠";
+            "format-plugged" = "{capacity}% {icon}  <span size=\"small\"></span>";
+            "format-full" = "{capacity}% {icon}  <span size=\"small\"></span>";
             "format-icons" = ["" "" "" "" ""];
             "max-length" = 25;
           };
