@@ -2,14 +2,13 @@
   pkgs,
   lib,
   config,
+  hostname,
   ...
 }: {
   options.waybar.enable = lib.mkEnableOption "Waybar";
   config = lib.mkIf config.waybar.enable {
     programs.waybar = {
       enable = true;
-
-      style = ./style.css;
 
       settings = [
         {
@@ -170,6 +169,107 @@
           };
         }
       ];
+
+      style =
+        /*
+        css
+        */
+        ''
+          * {
+            font-family: JetBrainsMono Nerd Font;
+            font-size: 11px;
+            color: #908caa;
+          }
+
+          window#waybar {
+            background: #191724;
+            border: 1px solid #26233a;
+            border-radius: 6px;
+          }
+
+          /* Fix because padding was not being applied with window#waybar */
+          .modules-left {
+            margin-left: 10px;
+          }
+          .modules-right {
+            margin-right: 10px;
+          }
+
+          #workspaces {
+            border: 1px solid transparent;
+            border-radius: 4px;
+            padding: 6px;
+          }
+
+          #workspaces button {
+            padding: 0px 8px;
+          }
+
+          #workspaces button:hover {
+            border-color: #26233a;
+          }
+
+          /* For some reason the color only works if i use this */
+          #workspaces button.active * {
+            color: #eb6f92;
+          }
+
+          #clock {
+            margin-right: 14px;
+          }
+
+          #custom-nixos-icon {
+            font-size: 16px;
+            padding-right: 6px;
+          }
+
+          #custom-power {
+            font-size: 16px;
+            padding-right: 1px;
+          }
+
+          .power-group-children > * {
+            margin-right: 20px;
+            font-size: 16px;
+          }
+
+          #custom-reboot {
+            color: #f6c177;
+          }
+
+          #pulseaudio {
+            margin-right: 20px;
+          }
+
+          #pulseaudio-slider {
+            margin-right: 20px;
+            padding-left: 5px;
+          }
+
+          #pulseaudio-slider trough {
+            min-width: 80px;
+          }
+
+          #pulseaudio-slider highlight {
+            color: #c4a7e7;
+          }
+
+          #custom-tray-leader {
+            padding: 0 8px 0 4px;
+          }
+
+          #tray {
+            margin-right: 20px;
+          }
+
+          #battery {
+            margin-right: 25px;
+          }
+
+          #tray > * {
+            color: #908caa;
+          }
+        '';
     };
   };
 }
