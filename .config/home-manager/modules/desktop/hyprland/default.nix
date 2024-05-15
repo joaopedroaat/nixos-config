@@ -76,6 +76,9 @@ in {
 
           touchpad = {
             natural_scroll = "yes";
+            scroll_factor = "0.1";
+            tap-and-drag = "no";
+            clickfinger_behavior = "yes";
           };
 
           sensitivity = 0; # -1.0 to 1.0, 0 means no modification.
@@ -129,7 +132,8 @@ in {
 
         gestures = {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
-          workspace_swipe = "off";
+          workspace_swipe = "on";
+          workspace_swipe_cancel_ratio = 0.15;
         };
 
         misc = {
