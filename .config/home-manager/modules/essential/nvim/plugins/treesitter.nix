@@ -12,6 +12,7 @@
       "yaml"
       "nix"
       "go"
+      "python"
     ];
   };
 }

@@ -32,6 +32,10 @@
         golines = {
           command = "${pkgs.golines}/bin/golines";
         };
+
+        black = {
+          command = "${pkgs.black}/bin/black";
+        };
       };
       formattersByFt = {
         html = ["prettierd"];
@@ -44,6 +48,7 @@
         markdown = ["prettierd"];
         yaml = ["yamlfmt"];
         go = ["gofumpt" "goimports-reviser golines"];
+        python = ["reorder-python-imports" "black"];
         "*" = ["trim_whitespace"];
       };
     };
