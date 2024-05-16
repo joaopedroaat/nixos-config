@@ -17,14 +17,17 @@
 
       settings = let
         hostname = config.networking.hostName;
+        device =
+          if hostname == "banana-tree"
+          then "banana-leaf"
+          else "banana-tree";
+        deviceId =
+          if hostname == "banana-tree"
+          then "7BHQOOK-QQSS2AG-ZOOHCGZ-J7EF4W3-KJHTWXS-CBWA7P7-E52CPT4-33TNYA2"
+          else "BDUIVNQ-IWB4RYX-LXMCIMB-GWBDLCW-ONAFMCN-MCWV5LP-QCCNQUA-2K6AEQD";
       in {
         devices = {
-          banana-tree = lib.mkIf (hostname == "banana-tree") {
-            id = "BDUIVNQ-IWB4RYX-LXMCIMB-GWBDLCW-ONAFMCN-MCWV5LP-QCCNQUA-2K6AEQD";
-          };
-          banana-leaf = lib.mkIf (hostname == "banana-tree") {
-            id = "7BHQOOK-QQSS2AG-ZOOHCGZ-J7EF4W3-KJHTWXS-CBWA7P7-E52CPT4-33TNYA2";
-          };
+          ${device} = {id = deviceId;};
         };
 
         folders = let
