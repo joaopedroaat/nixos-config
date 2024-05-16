@@ -1,8 +1,9 @@
-{pkgs, ...}: {
+{...}: {
   programs.nixvim = {
-    extraPlugins = with pkgs.vimPlugins; [
-      neo-tree-nvim
-    ];
+    plugins.neo-tree = {
+      enable = true;
+      autoCleanAfterSessionRestore = true;
+    };
 
     keymaps = [
       {

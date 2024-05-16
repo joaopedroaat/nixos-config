@@ -1,3 +1,5 @@
 {...}: {
-  programs.nixvim.plugins.auto-session.enable = true;
+  programs.nixvim.plugins.auto-session = {
+    enable = true;
+  };
 }
