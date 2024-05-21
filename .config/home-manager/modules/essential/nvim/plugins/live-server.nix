@@ -19,6 +19,9 @@
   };
 
   programs.nixvim = {
+    extraPackages = with pkgs.nodePackages; [
+      live-server
+    ];
     extraPlugins = with pkgs.vimPlugins; [
       live-server
     ];
