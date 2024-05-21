@@ -24,7 +24,7 @@
           enable_posix_regex = true;
 
           width = 250;
-          height = 250;
+          height = 100;
           offset = "8x8";
 
           gap_size = 4;
@@ -45,8 +45,7 @@
           background = "#26233a";
           foreground = "#e0def4";
 
-          icon_path = "~/.config/dunst/default.svg";
-          default_icon = "./icon.svg";
+          default_icon = "~/.config/dunst/default.svg";
 
           text_icon_padding = 12;
 
@@ -57,10 +56,12 @@
           context = "ctrl+shift+period";
         };
 
+        /*
         urgency_low = {
-          frame_color = "#f6c177";
-          new_icon = "~/.config/dunst/warning.svg";
+        frame_color = "#f6c177";
+        new_icon = "~/.config/dunst/warning.svg";
         };
+        */
 
         urgency_critical = {
           frame_color = "#eb6f92";
