@@ -28,6 +28,7 @@
         dockerls.enable = true;
         jsonls.enable = true;
         html.enable = true;
+        htmx.enable = true;
         pylsp.enable = true;
       };
     };
