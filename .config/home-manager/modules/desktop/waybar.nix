@@ -40,10 +40,10 @@
             "format" = "{icon} <span font_size=\"x-small\" rise=\"1pt\">-></span> {windows}";
             "window-rewrite-default" = " ";
             "window-rewrite" = {
-              "class<kitty>" = "󰆍 ";
-              "class<kitty> title<tmux*>" = "󰙀 ";
-              "class<kitty> title<nvim*>" = "󰈮 ";
-              "class<kitty> title<lf>" = "󰉋 ";
+              "class<kitty>" = "󰄛 ";
+              "class<kitty> title<tmux.*>" = "󰙀 "; # Catch everything that starts with tmux, no matter what cames next
+              "class<kitty> title<nvim.*>" = "󰈮 "; # Catch everything that starts with nvim, no matter what cames next
+              "class<kitty> title<lf.*>" = "󰉋 "; # Catch everything that starts with lf, no matter what cames next
               "class<firefox>" = "󰈹 ";
               "class<Spotify>" = "󰓇 ";
               "class<discord>" = "󰙯 ";
