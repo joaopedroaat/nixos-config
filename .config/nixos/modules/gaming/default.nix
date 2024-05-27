@@ -6,6 +6,7 @@
   imports = [
     ./steam.nix
     ./lutris.nix
+    ./grapejuice.nix
   ];
 
   options.gaming.enable = lib.mkEnableOption "Gaming";
