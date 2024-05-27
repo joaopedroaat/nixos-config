@@ -18,6 +18,7 @@
       foldlevel = 99; # Using ufo provider need a large value, feel free to decrease the value
       foldlevelstart = 99;
       foldenable = true;
+      fillchars = "eob: ,fold: ,foldopen:,foldsep: ,foldclose:";
     };
 
     keymaps = [

@@ -24,5 +24,6 @@
     ./bqf.nix
     ./ufo.nix
     ./indent-blankline.nix
+    ./statuscol.nix
   ];
 }
