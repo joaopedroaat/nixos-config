@@ -18,5 +18,11 @@
     ./tailwindcss-colors.nix
     ./lazydocker.nix
     ./live-server.nix
+    ./matchup.nix
+    ./surround.nix
+    ./trouble.nix
+    ./bqf.nix
+    ./ufo.nix
+    ./indent-blankline.nix
   ];
 }
