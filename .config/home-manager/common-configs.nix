@@ -7,6 +7,10 @@
     GTK_THEME = config.gtk.theme.name;
   };
 
+  home.shellAliases = {
+    dev = "nix develop";
+  };
+
   xdg = {
     enable = true;
     userDirs = {
