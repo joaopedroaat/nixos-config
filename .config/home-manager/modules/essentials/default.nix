@@ -12,8 +12,8 @@
     ./lf
   ];
 
-  options.essential.enable = lib.mkEnableOption "Essential";
-  config = lib.mkIf config.essential.enable {
+  options.essentials.enable = lib.mkEnableOption "Essentials";
+  config = lib.mkIf config.essentials.enable {
     git.enable = true;
     ssh.enable = true;
     fish.enable = true;

@@ -3,7 +3,7 @@
     ./desktop
     ./terminal-tools
     ./development
-    ./essential
+    ./essentials
     ./theme
   ];
 }

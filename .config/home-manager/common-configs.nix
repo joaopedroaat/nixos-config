@@ -43,7 +43,7 @@
 
   imports = [./modules];
 
-  essential.enable = true;
+  essentials.enable = true;
   desktop.enable = true;
   development.enable = true;
   terminal-tools.enable = true;
