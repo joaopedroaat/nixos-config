@@ -1,7 +1,7 @@
 {...}: {
   programs.nixvim = {
     plugins.vim-matchup = {
-      enable = true;
+      enable = false;
     };
 
     keymaps = [
