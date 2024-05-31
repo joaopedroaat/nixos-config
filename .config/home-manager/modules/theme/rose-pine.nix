@@ -19,7 +19,7 @@
       # x11.enable = true;
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
-      size = 11;
+      size = 23;
     };
 
     # GTK
