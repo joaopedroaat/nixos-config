@@ -22,7 +22,31 @@
         nil_ls.enable = true;
         lua-ls.enable = true;
         tsserver.enable = true;
-        cssls.enable = true;
+        cssls = {
+          enable = true;
+          extraOptions = {
+            settings = {
+              css = {
+                validate = true;
+                lint = {
+                  unknownAtRules = "ignore";
+                };
+              };
+              scss = {
+                validate = true;
+                lint = {
+                  unknownAtRules = "ignore";
+                };
+              };
+              less = {
+                validate = true;
+                lint = {
+                  unknownAtRules = "ignore";
+                };
+              };
+            };
+          };
+        };
         tailwindcss.enable = true;
         gopls.enable = true;
         dockerls.enable = true;
