@@ -18,6 +18,11 @@
           desc = "Find Buffers";
         };
 
+        "<leader><leader>" = {
+          action = "buffers";
+          desc = "Find Buffers";
+        };
+
         "<leader>fh" = {
           action = "help_tags";
           desc = "Find Help";
