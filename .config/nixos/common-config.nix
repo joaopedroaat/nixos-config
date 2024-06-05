@@ -18,6 +18,10 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Enable virtualization
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["joaopedroaat"];
+
   # Set your time zone.
   time.timeZone = "America/Maceio";
 
