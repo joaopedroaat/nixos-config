@@ -13,7 +13,7 @@
       else ""
     }
 
-    swww init &
+    swww init; sleep 1 &&
     swww img ${./assets/hyprland-wallpaper.png} &
 
     dunst &
