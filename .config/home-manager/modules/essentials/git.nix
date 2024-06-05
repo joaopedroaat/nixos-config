@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   config,
   ...
@@ -15,8 +14,13 @@
       };
     };
 
-    home.packages = with pkgs; [
-      lazygit
-    ];
+    programs.lazygit = {
+      enable = true;
+      settings = {
+        git = {
+          autoFetch = false;
+        };
+      };
+    };
   };
 }
