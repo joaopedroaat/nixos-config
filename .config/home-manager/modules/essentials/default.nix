@@ -10,6 +10,7 @@
     ./tmux.nix
     ./nvim
     ./lf
+    ./nightlight.nix
   ];
 
   options.essentials.enable = lib.mkEnableOption "Essentials";
@@ -20,5 +21,6 @@
     tmux.enable = true;
     nvim.enable = true;
     lf.enable = true;
+    nightlight.enable = true;
   };
 }
