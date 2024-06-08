@@ -17,6 +17,11 @@
           };
         };
       };
+      extensions = {
+        file_browser = {
+          enable = true;
+        };
+      };
       keymaps = {
         "<leader>ff" = {
           action = "find_files";
@@ -44,6 +49,13 @@
         };
       };
     };
+
+    keymaps = [
+      {
+        action = "<cmd>Telescope file_browser<CR>";
+        key = "<C-p>";
+      }
+    ];
 
     # Telescope dependencies
     extraPackages = with pkgs; [
