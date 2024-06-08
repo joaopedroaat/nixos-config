@@ -2,6 +2,21 @@
   programs.nixvim = {
     plugins.telescope = {
       enable = true;
+      defaults = {
+        mappings = let
+          actions = "require('telescope.actions')";
+        in {
+          n = {
+            "<C-d>" = {
+              __raw = "${actions}.delete_buffer";
+            };
+          };
+          i = {
+            "<C-h>" = {__raw = "${actions}.which_key";};
+            "<C-d>" = {__raw = "${actions}.delete_buffer";};
+          };
+        };
+      };
       keymaps = {
         "<leader>ff" = {
           action = "find_files";
