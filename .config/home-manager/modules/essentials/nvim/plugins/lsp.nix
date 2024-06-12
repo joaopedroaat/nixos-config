@@ -1,5 +1,9 @@
-{...}: {
+{pkgs, ...}: {
   programs.nixvim = {
+    extraPlugins = with pkgs.vimPlugins; [
+      yuck-vim
+    ];
+
     plugins.lsp = {
       enable = true;
       keymaps = {
