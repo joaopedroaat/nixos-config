@@ -59,8 +59,9 @@
             "max-length" = 40;
           };
           "clock" = {
+            "interval" = 1;
             "format" = "{:%R}";
-            "format-alt" = "<span text_transform=\"capitalize\">{:%a, %d %b %Y}</span>";
+            "format-alt" = "<span text_transform=\"capitalize\">{:%a, %d %b %Y %T}</span>";
             "on-click-right" = "kitty --class calcure -e calcure";
           };
           # Pulseaudio
