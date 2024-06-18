@@ -55,7 +55,9 @@
             };
           };
         };
-        settings = {};
+        settings = {
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        };
         /*
         bookmarks = [
           {
