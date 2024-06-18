@@ -26,5 +26,6 @@
     ./ufo.nix
     ./indent-blankline.nix
     ./statuscol.nix
+    ./harpoon.nix
   ];
 }
