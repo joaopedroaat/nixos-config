@@ -7,6 +7,7 @@
     ./git.nix
     ./ssh.nix
     ./fish.nix
+    ./zsh.nix
     ./tmux.nix
     ./nvim
     ./lf
@@ -17,7 +18,6 @@
   config = lib.mkIf config.essentials.enable {
     git.enable = true;
     ssh.enable = true;
-    fish.enable = true;
     tmux.enable = true;
     nvim.enable = true;
     lf.enable = true;

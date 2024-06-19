@@ -8,32 +8,33 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/f36bf795-e91d-4db1-9301-182d6ae1f1c4";
+    { device = "/dev/disk/by-uuid/bc753464-6cd2-4a94-a380-d9b6fd23a47c";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-d1794a5c-c045-4d0c-b8d0-7d1358ad92ec".device = "/dev/disk/by-uuid/d1794a5c-c045-4d0c-b8d0-7d1358ad92ec";
-
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/9C49-25C0";
+    { device = "/dev/disk/by-uuid/E6E9-1821";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [ ];
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/f09128a4-8ac0-4d45-83d0-c01d6a324cc3"; }
+    ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp2s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.vboxnet0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

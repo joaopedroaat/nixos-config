@@ -77,7 +77,6 @@
     neovim
   ];
 
-  # Default shell
   users.defaultUserShell = pkgs.zsh;
 
   # Common modules
