@@ -49,11 +49,6 @@
             inherit devices;
           };
 
-          "Projects" = {
-            path = "/home/joaopedroaat/Projects";
-            inherit devices;
-          };
-
           "Music" = {
             path = "/home/joaopedroaat/Music";
             inherit devices;
