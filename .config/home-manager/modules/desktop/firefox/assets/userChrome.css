@@ -72,6 +72,12 @@
   background: var(--uc-bg-color) !important;
   border: none !important;
 }
+
+.tabbrowser-tab[selected] .tab-background {
+  background: var(--uc-bg-color) !important;
+  border: 1px solid #ebbcba !important; /* Adjust the color */
+}
+
 #urlbar[breakout][breakout-extend] {
   top: calc(
     (var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2
