@@ -17,6 +17,7 @@
       mouse = true;
       baseIndex = 1;
       clock24 = true;
+      shell = "${pkgs.zsh}/bin/zsh";
 
       extraConfig = ''
         # Shift Alt vim keys to switch windows
