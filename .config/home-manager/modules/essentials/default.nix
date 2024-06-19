@@ -18,6 +18,7 @@
   config = lib.mkIf config.essentials.enable {
     git.enable = true;
     ssh.enable = true;
+    zsh.enable = true;
     tmux.enable = true;
     nvim.enable = true;
     lf.enable = true;

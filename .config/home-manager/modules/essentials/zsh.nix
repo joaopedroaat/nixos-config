@@ -10,14 +10,12 @@
       enableAutosuggestions = true;
       enableCompletion = true;
       autocd = true;
-      defaultKeymap = "vicmd";
+    };
 
-      oh-my-zsh = {
-        enable = true;
-        plugins = [
-          "sudo"
-        ];
-      };
+    programs.oh-my-posh = {
+      enable = true;
+      enableZshIntegration = true;
+      useTheme = "amro";
     };
   };
 }
