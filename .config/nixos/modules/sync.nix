@@ -23,7 +23,7 @@
           else "banana-tree";
         deviceId =
           if hostname == "banana-tree"
-          then "7BHQOOK-QQSS2AG-ZOOHCGZ-J7EF4W3-KJHTWXS-CBWA7P7-E52CPT4-33TNYA2"
+          then "BDPLFKS-XXCRL7Z-RIRLPGQ-ZIARS57-TB2X5G2-UU3MDOL-COGPBFM-EPGXUQU"
           else "BDUIVNQ-IWB4RYX-LXMCIMB-GWBDLCW-ONAFMCN-MCWV5LP-QCCNQUA-2K6AEQD";
       in {
         devices = {
@@ -55,7 +55,7 @@
           };
 
           "Videos" = {
-            path = "/home/joaopedroaat/Music";
+            path = "/home/joaopedroaat/Videos";
             inherit devices;
           };
         };
