@@ -23,14 +23,16 @@ in {
       };
 
       profiles.joaopedroaat = {
+        /*
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-          vimium
-          onepassword-password-manager
-          adblocker-ultimate
-          betterttv
-          react-devtools
-          darkreader
+        vimium
+        onepassword-password-manager
+        adblocker-ultimate
+        betterttv
+        react-devtools
+        darkreader
         ];
+        */
 
         search = {
           force = true;

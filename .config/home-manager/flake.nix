@@ -32,9 +32,6 @@
 
     # Spicetify
     spicetify-nix.url = "github:the-argus/spicetify-nix";
-
-    # NUR Repository
-    nur.url = "github:nix-community/nur";
   };
 
   outputs = {
@@ -44,7 +41,6 @@
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
-      overlays = [inputs.nur.overlay];
       inherit system;
       config.allowUnfree = true;
     };
