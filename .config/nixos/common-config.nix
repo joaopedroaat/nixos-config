@@ -77,10 +77,13 @@
     neovim
   ];
 
+  # Default shell
+  users.defaultUserShell = pkgs.zsh;
+
   # Common modules
   _1password.enable = true;
   docker.enable = true;
-  fish.enable = true;
+  zsh.enable = true;
   hyprland.enable = true;
   office.enable = true;
   sync.enable = true;
