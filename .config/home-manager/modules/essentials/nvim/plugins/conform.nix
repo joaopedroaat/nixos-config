@@ -36,6 +36,10 @@
         black = {
           command = "${pkgs.black}/bin/black";
         };
+
+        shellcheck = {
+          command = "${pkgs.shellcheck}/bin/shellcheck";
+        };
       };
       formattersByFt = {
         html = ["prettierd"];
@@ -49,6 +53,7 @@
         yaml = ["yamlfmt"];
         go = ["gofumpt" "goimports-reviser golines"];
         python = ["reorder-python-imports" "black"];
+        bash = ["shellcheck"];
         "*" = ["trim_whitespace"];
       };
     };

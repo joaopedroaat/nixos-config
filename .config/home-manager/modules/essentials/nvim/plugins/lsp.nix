@@ -58,6 +58,7 @@
         html.enable = true;
         htmx.enable = true;
         pylsp.enable = true;
+        bashls.enable = true;
       };
     };
   };
