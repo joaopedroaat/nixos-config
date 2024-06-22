@@ -86,8 +86,23 @@ in {
           color = "rgb(110, 106, 134)";
 
           position = {
+            x = 16;
+            y = -64;
+          };
+
+          valign = "bottom";
+          halign = "left";
+        }
+        {
+          monitor = "";
+          text = ''cmd[update:1000] date +"%d %b %Y"'';
+          inherit font_family;
+          font_size = 16;
+          color = "rgb(110, 106, 134)";
+
+          position = {
             x = 20;
-            y = -90;
+            y = -80;
           };
 
           valign = "bottom";
@@ -97,7 +112,7 @@ in {
           monitor = "";
           text = ''cmd[update:1000] ${baterryLevelScript}/bin/baterry'';
           inherit font_family;
-          font_size = 16;
+          font_size = 13;
           color = "rgb(110, 106, 134)";
 
           position = {
