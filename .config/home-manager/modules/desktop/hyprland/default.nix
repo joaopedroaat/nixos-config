@@ -44,7 +44,7 @@ in {
 
         # Variables
         "$terminal" = "kitty";
-        "$fileManager" = "kitty -e lf";
+        "$fileManager" = "kitty -e yazi";
         "$menu_drun" = "rofi -show drun -show-icons";
         "$menu_run" = "rofi -show run -show-icons";
         "$menu_windows" = "rofi -show window -show-icons";
@@ -162,6 +162,10 @@ in {
           "float,class:(kitty),title:(lf)"
           "center(1),class:(kitty),title:(lf)"
           "size 60% 60%,class:(kitty),title:(lf)"
+
+          "float,class:(kitty),title:(yazi)"
+          "center(1),class:(kitty),title:(yazi)"
+          "size 60% 60%,class:(kitty),title:(yazi)"
 
           "float, title:(1Password)"
           "size 70% 70%, title:(1Password)"

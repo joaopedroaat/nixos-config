@@ -13,6 +13,7 @@
     ./netcat.nix
     ./bat.nix
     ./tree.nix
+    ./yazi.nix
   ];
 
   options.terminal-tools.enable = lib.mkEnableOption "Terminal tools";
@@ -26,5 +27,6 @@
     netcat.enable = true;
     bat.enable = true;
     tree.enable = true;
+    yazi.enable = true;
   };
 }
