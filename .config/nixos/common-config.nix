@@ -77,6 +77,8 @@
     neovim
   ];
 
+  environment.localBinInPath = true;
+
   users.defaultUserShell = pkgs.zsh;
 
   # Common modules
