@@ -2,9 +2,36 @@
   lib,
   config,
   inputs,
+  pkgs,
   ...
 }: let
   font_family = "JetBrainsMono Nerd Font";
+
+  baterryLevelScript = pkgs.pkgs.writeShellScriptBin "baterry" ''
+    #!/usr/bin/env bash
+
+    battery_level=$(cat /sys/class/power_supply/BAT*/capacity)
+    baterry_status=$(cat /sys/class/power_supply/BAT*/status)
+    format=""
+
+    if [[ $baterry_status == "Charging" ]]; then
+      format="󱐋"
+    fi
+
+    if (( battery_level <= 5 )); then
+      format="$format  $battery_level%"
+      elif ((battery_level < 50)); then
+        format="$format  $battery_level%"
+      elif ((battery_level < 75)); then
+        format="$format  $battery_level%"
+      elif ((battery_level < 100)); then
+        format="$format  $battery_level%"
+      else
+        format="$format  $battery_level%"
+    fi
+
+    echo "$format"
+  '';
 in {
   imports = [inputs.hyprlock.homeManagerModules.hyprlock];
   options.hyprlock.enable = lib.mkEnableOption "Hyprlock";
@@ -55,16 +82,31 @@ in {
           monitor = "";
           text = "$TIME";
           inherit font_family;
-          font_size = 50;
+          font_size = 48;
           color = "rgb(110, 106, 134)";
 
           position = {
             x = 20;
-            y = 80;
+            y = -90;
           };
 
           valign = "bottom";
           halign = "left";
+        }
+        {
+          monitor = "";
+          text = ''cmd[update:1000] ${baterryLevelScript}/bin/baterry'';
+          inherit font_family;
+          font_size = 16;
+          color = "rgb(110, 106, 134)";
+
+          position = {
+            x = -16;
+            y = -16;
+          };
+
+          valign = "top";
+          halign = "right";
         }
       ];
     };
