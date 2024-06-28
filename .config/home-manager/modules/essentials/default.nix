@@ -12,6 +12,7 @@
     ./nvim
     ./lf
     ./nightlight.nix
+    ./trash-cli.nix
   ];
 
   options.essentials.enable = lib.mkEnableOption "Essentials";
@@ -23,5 +24,6 @@
     nvim.enable = true;
     lf.enable = true;
     nightlight.enable = true;
+    trash-cli.enable = true;
   };
 }
