@@ -9,10 +9,6 @@
     programs.yazi = {
       enable = true;
       enableZshIntegration = true;
-      keymap = {
-        input.keymap = [
-        ];
-      };
     };
 
     home.packages = with pkgs; [
