@@ -77,14 +77,16 @@ in {
 
           follow_mouse = 1;
 
-          touchpad = {
-            natural_scroll = "yes";
-            scroll_factor = "0.2";
-            tap-and-drag = "no";
-            clickfinger_behavior = "yes";
-          };
+          sensitivity = 0.4; # -1.0 to 1.0, 0 means no modification.
 
-          sensitivity = 0; # -1.0 to 1.0, 0 means no modification.
+          touchpad = {
+            natural_scroll = true;
+            scroll_factor = 0.5;
+            tap-and-drag = true;
+            disable_while_typing = true;
+            clickfinger_behavior = true;
+            drag_lock = true;
+          };
         };
 
         general = {
