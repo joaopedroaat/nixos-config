@@ -16,10 +16,9 @@
     # Cursor
     home.pointerCursor = {
       gtk.enable = true;
-      # x11.enable = true;
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-      size = 23;
+      name = "BreezeX-RosePine-Linux";
+      package = pkgs.rose-pine-cursor;
+      size = 24;
     };
 
     # GTK
