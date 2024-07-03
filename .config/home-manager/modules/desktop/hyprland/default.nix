@@ -52,10 +52,15 @@ in {
         "$passwordManager" = "1password";
         "$calendar" = "kitty --class calcure -e calcure";
 
+        xwayland = {
+          force_zero_scaling = true;
+        };
+
         # Default env vars.
         env = [
           "XCURSOR_SIZE,24"
           "QT_QPA_PLATFORMTHEME,qt5ct" # change to qt6ct if you have that
+          "GDK_SCALE,1.2"
         ];
 
         # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
@@ -77,11 +82,11 @@ in {
 
           follow_mouse = 1;
 
-          sensitivity = 0.4; # -1.0 to 1.0, 0 means no modification.
+          sensitivity = 0; # -1.0 to 1.0, 0 means no modification.
 
           touchpad = {
             natural_scroll = true;
-            scroll_factor = 0.5;
+            scroll_factor = 0.2;
             tap-and-drag = true;
             disable_while_typing = true;
             clickfinger_behavior = true;
