@@ -8,5 +8,6 @@
     ./sync.nix
     ./gaming
     ./office
+    ./bluetooth.nix
   ];
 }

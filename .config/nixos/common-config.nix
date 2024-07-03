@@ -25,10 +25,6 @@
   # Set your time zone.
   time.timeZone = "America/Maceio";
 
-  # Enable bluetooth
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -88,6 +84,7 @@
   hyprland.enable = true;
   office.enable = true;
   sync.enable = true;
+  bluetooth.enable = true;
 
   # Run unpatched dynamic binaries on NixOS.
   programs.nix-ld = {
