@@ -53,6 +53,9 @@
               "class<com.usebottles.bottles>" = "󱄮 ";
               "class<lutris>" = " ";
               "class<Gimp.*>" = " ";
+              "class<VirtualBox Manager>" = "󰢔 ";
+              "class<VirtualBox Machine>" = "󰹑 ";
+              "class<libreoffice.*>" = "󰈙 ";
             };
           };
           "hyprland/window" = {
