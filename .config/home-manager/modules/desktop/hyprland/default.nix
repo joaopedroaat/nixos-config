@@ -94,6 +94,10 @@ in {
           };
         };
 
+        binds = {
+          allow_workspace_cycles = true;
+        };
+
         general = {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
           gaps_in = 2;
@@ -272,6 +276,9 @@ in {
           # Scroll through existing workspaces with mainMod + ], mainMod + [
           "$mainMod, code:35, workspace, e+1"
           "$mainMod, code:34, workspace, e-1"
+
+          "ALT, TAB, workspace, previous"
+          "$mainMod, W, workspace, empty"
         ];
 
         bindm = [
