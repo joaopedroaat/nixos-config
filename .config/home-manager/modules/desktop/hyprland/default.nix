@@ -170,17 +170,9 @@ in {
         windowrulev2 = [
           "suppressevent maximize, class:.*" # You'll probably like this.
 
-          "float,class:(kitty),title:(lf)"
-          "center(1),class:(kitty),title:(lf)"
-          "size 60% 60%,class:(kitty),title:(lf)"
-
           "float,class:(kitty),title:(yazi)"
           "center(1),class:(kitty),title:(yazi)"
           "size 60% 60%,class:(kitty),title:(yazi)"
-
-          "float, title:(1Password)"
-          "size 70% 70%, title:(1Password)"
-          "center, title:(1Password)"
 
           "float, class:(pulsemixer)"
           "move 60% 6.5%, class:(pulsemixer)"
