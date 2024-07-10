@@ -55,6 +55,7 @@
               "class<Gimp.*>" = " ";
               "class<VirtualBox Manager>" = "󰢔 ";
               "class<VirtualBox Machine>" = "󰹑 ";
+              "class<VirtualBox Machine> title<Windows.*>" = "󰖳 ";
               "class<libreoffice.*>" = "󰈙 ";
             };
           };
