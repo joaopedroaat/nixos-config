@@ -28,6 +28,7 @@
             "group/tray"
             "group/volume"
             "clock"
+            "network"
             "battery"
             "group/power"
           ];
@@ -61,6 +62,18 @@
           };
           "hyprland/window" = {
             "max-length" = 40;
+          };
+          network = {
+            "format" = "{icon}";
+            "format-alt" = "{ipaddr}/{cidr} {icon}";
+            "format-alt-click" = "click-right";
+            "format-icons" = {
+              "wifi" = ["󰤟" "󰤢" "󰤥" "󰤨"];
+              "ethernet" = ["󰈀"];
+              "disconnected" = [""];
+            };
+            "on-click" = "${pkgs.kitty}/bin/kitty -e nmtui";
+            "tooltip" = false;
           };
           "clock" = {
             "interval" = 1;
@@ -242,6 +255,10 @@
 
           #custom-reboot {
             color: #f6c177;
+          }
+
+          #network {
+            margin-right: 20px;
           }
 
           #pulseaudio {
