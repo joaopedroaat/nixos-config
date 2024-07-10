@@ -195,7 +195,7 @@ in {
           "$mainMod SHIFT, C, exec, $locker" # SUPER + SHIFT + _
           "$mainMod SHIFT, Q, killactive"
           "$mainMod SHIFT, E, exit"
-          "$mainMod, E, exec, $fileManager"
+          "$mainMod, F, exec, $fileManager"
           "$mainMod SHIFT, SPACE, togglefloating"
 
           # ROFI
@@ -266,8 +266,8 @@ in {
           "$mainMod, mouse_up, workspace, e-1"
 
           # Scroll through existing workspaces with mainMod + ], mainMod + [
-          "$mainMod, code:35, workspace, e+1"
-          "$mainMod, code:34, workspace, e-1"
+          "$mainMod, E, workspace, e+1"
+          "$mainMod, Q, workspace, e-1"
 
           "ALT, TAB, workspace, previous"
           "$mainMod, W, workspace, empty"
