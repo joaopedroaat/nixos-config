@@ -64,13 +64,14 @@
             "max-length" = 40;
           };
           network = {
+            "interval" = 1;
             "format" = "{icon}";
             "format-alt" = "{ipaddr}/{cidr} {icon}";
             "format-alt-click" = "click-right";
             "format-icons" = {
               "wifi" = ["󰤟" "󰤢" "󰤥" "󰤨"];
               "ethernet" = ["󰈀"];
-              "disconnected" = [""];
+              "disconnected" = ["󰪎"];
             };
             "on-click" = "${pkgs.kitty}/bin/kitty -e nmtui";
             "tooltip" = false;
