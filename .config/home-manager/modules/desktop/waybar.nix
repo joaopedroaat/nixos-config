@@ -25,7 +25,6 @@
           ];
           "modules-center" = [];
           "modules-right" = [
-            "group/tray"
             "group/volume"
             "clock"
             "network"
@@ -76,7 +75,7 @@
             "on-click" = "${pkgs.kitty}/bin/kitty -e nmtui";
             "tooltip" = false;
           };
-          "clock" = {
+          clock = {
             "interval" = 1;
             "format" = "{:%R}";
             "format-alt" = "<span text_transform=\"capitalize\">{:%a, %d %b %Y %T}</span>";
@@ -90,12 +89,12 @@
               "children-class" = "volume-group-children";
               "transition-left-to-right" = true;
             };
-            "modules" = [
+            modules = [
               "pulseaudio"
               "pulseaudio/slider"
             ];
           };
-          "pulseaudio" = {
+          pulseaudio = {
             "format" = "{volume}% {icon}";
             "format-bluetooth" = "{volume}% {icon}";
             "format-muted" = "<span foreground=\"#eb6f92\"> muted</span>";
@@ -118,63 +117,7 @@
               "Easy Effects Sink"
             ];
           };
-          # Power
-          "group/power" = {
-            "orientation" = "inherit";
-            "drawer" = {
-              "transition-duration" = 500;
-              "children-class" = "power-group-children";
-              "transition-left-to-right" = false;
-            };
-            "modules" = [
-              "custom/power" # First element is the "group leader" and won't ever be hidden
-              "custom/quit"
-              "custom/lock"
-              "custom/reboot"
-            ];
-          };
-          "custom/quit" = {
-            "format" = "<span rise=\"4pt\">󰍃</span>";
-            "tooltip" = false;
-            "on-click" = "hyprctl dispatch exit";
-          };
-          "custom/lock" = {
-            "format" = "<span rise=\"4pt\">󰍁</span>";
-            "tooltip" = false;
-            "on-click" = "hyprlock";
-          };
-          "custom/reboot" = {
-            "format" = "<span rise=\"4pt\" >󰜉</span>";
-            "tooltip" = false;
-            "on-click" = "reboot";
-          };
-          "custom/power" = {
-            "format" = "<span rise=\"4pt\">󰐥</span>";
-            "tooltip" = false;
-            "on-click" = "shutdown now";
-          };
-          # Tray
-          "group/tray" = {
-            "orientation" = "inherit";
-            "drawer" = {
-              "transition-duration" = 500;
-              "children-class" = "tray-group-children";
-              "transition-left-to-right" = false;
-            };
-            "modules" = [
-              "custom/tray-leader"
-              "tray"
-            ];
-          };
-          "custom/tray-leader" = {
-            "format" = "󱕷";
-            "tooltip" = false;
-          };
-          "tray" = {
-            "icon-size" = 13;
-            "spacing" = 8;
-          };
-          "battery" = {
+          battery = {
             #"bat" = "BAT2";
             "interval" = 1;
             "states" = {
@@ -210,20 +153,26 @@
 
           /* Fix because padding was not being applied with window#waybar */
           .modules-left {
-            margin-left: 10px;
+            margin-left: 8px;
           }
           .modules-right {
-            margin-right: 10px;
+            margin-right: 8px;
+          }
+
+          /* Spacing */
+          #workspaces button,
+          #clock,
+          #network,
+          #pulseaudio,
+          #pulseaudio-slider,
+          #battery  {
+            padding: 0px 8px;
           }
 
           #workspaces {
             border: 1px solid transparent;
             border-radius: 4px;
             padding: 6px;
-          }
-
-          #workspaces button {
-            padding: 0px 8px;
           }
 
           #workspaces button:hover {
@@ -235,40 +184,10 @@
             color: #eb6f92;
           }
 
-          #clock {
-            margin-right: 14px;
-          }
 
           #custom-nixos-icon {
             font-size: 16px;
             padding-right: 6px;
-          }
-
-          #custom-power {
-            font-size: 16px;
-            padding-right: 1px;
-          }
-
-          .power-group-children > * {
-            margin-right: 20px;
-            font-size: 16px;
-          }
-
-          #custom-reboot {
-            color: #f6c177;
-          }
-
-          #network {
-            margin-right: 20px;
-          }
-
-          #pulseaudio {
-            margin-right: 20px;
-          }
-
-          #pulseaudio-slider {
-            margin-right: 20px;
-            padding-left: 5px;
           }
 
           #pulseaudio-slider trough {
@@ -277,22 +196,6 @@
 
           #pulseaudio-slider highlight {
             color: #c4a7e7;
-          }
-
-          #custom-tray-leader {
-            padding: 0 8px 0 4px;
-          }
-
-          #tray {
-            margin-right: 20px;
-          }
-
-          #battery {
-            margin-right: 25px;
-          }
-
-          #tray > * {
-            color: #908caa;
           }
         '';
     };
