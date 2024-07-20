@@ -8,18 +8,48 @@
       enable = true;
       keymaps = {
         lspBuf = {
-          "<S-k>" = "hover";
-          "g<S-d>" = "references";
-          gd = "definition";
-          gi = "implementation";
-          gt = "type_definition";
-          "<leader>ca" = "code_action";
-          "<leader>cr" = "rename";
+          "<S-k>" = {
+            action = "hover";
+            desc = "Hover";
+          };
+          "g<S-d>" = {
+            action = "references";
+            desc = "References";
+          };
+          gd = {
+            action = "definition";
+            desc = "Definitions";
+          };
+          gi = {
+            action = "implementation";
+            desc = "Implementation";
+          };
+          gt = {
+            action = "type_definition";
+            desc = "Type Definition";
+          };
+          "<leader>ca" = {
+            action = "code_action";
+            desc = "Code Action";
+          };
+          "<leader>cr" = {
+            action = "rename";
+            desc = "Rename";
+          };
         };
         diagnostic = {
-          "<leader>j" = "goto_next";
-          "<leader>k" = "goto_prev";
-          "<leader>cd" = "open_float";
+          "<leader>j" = {
+            action = "goto_next";
+            desc = "Next Diagnostic";
+          };
+          "<leader>k" = {
+            action = "goto_prev";
+            desc = "Prev Diagnostic";
+          };
+          "<leader>cd" = {
+            action = "open_float";
+            desc = "Diagnostic";
+          };
         };
       };
       servers = {
