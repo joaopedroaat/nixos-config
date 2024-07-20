@@ -16,7 +16,10 @@
       markBranch = true;
     };
 
-    keymaps = [
+    keymaps = let
+      harpoon-ui = "<cmd>lua require('harpoon.ui')";
+      harpoon-mark = "<cmd>lua require('harpoon.mark')";
+    in [
       {
         action = "<cmd>Telescope harpoon marks<CR>";
         key = "<leader>fm";
@@ -24,25 +27,25 @@
       }
       {
         mode = "n";
-        action = "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>";
+        action = "${harpoon-ui}.toggle_quick_menu()<CR>";
         key = "mq";
         options = {desc = "Find marks (Harpoon)";};
       }
       {
         mode = "n";
-        action = "<cmd>lua require('harpoon.mark').add_file()<CR>";
+        action = "${harpoon-mark}.add_file()<CR>";
         key = "ma";
         options = {desc = "Mark file";};
       }
       {
         mode = "n";
-        action = "<cmd>lua require('harpoon.ui').nav_next()<CR>";
+        action = "${harpoon-ui}.nav_next()<CR>";
         key = "mn";
         options = {desc = "Next mark";};
       }
       {
         mode = "n";
-        action = "<cmd>lua require('harpoon.ui').nav_prev()<CR>";
+        action = "${harpoon-ui}.nav_prev()<CR>";
         key = "mp";
         options = {desc = "Prev mark";};
       }
