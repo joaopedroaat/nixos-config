@@ -13,6 +13,7 @@
     ./lf
     ./nightlight.nix
     ./trash-cli.nix
+    ./obsidian.nix
   ];
 
   options.essentials.enable = lib.mkEnableOption "Essentials";
@@ -25,5 +26,6 @@
     lf.enable = true;
     nightlight.enable = true;
     trash-cli.enable = true;
+    obsidian.enable = true;
   };
 }
