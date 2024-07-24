@@ -8,6 +8,7 @@
     ./google-cloud.nix
     ./openssl.nix
     ./aws.nix
+    ./beekeeper.nix
   ];
 
   options.development.enable = lib.mkEnableOption "Development";
@@ -16,5 +17,6 @@
     google-cloud.enable = true;
     openssl.enable = true;
     aws.enable = true;
+    beekeeper.enable = true;
   };
 }

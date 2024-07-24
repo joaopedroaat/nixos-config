@@ -57,6 +57,7 @@
               "class<VirtualBox Machine>" = "󰹑 ";
               "class<VirtualBox Machine> title<Windows.*>" = "󰖳 ";
               "class<libreoffice.*>" = "󰈙 ";
+              "class<beekeeper-studio>" = "󰆼 ";
             };
           };
           "hyprland/window" = {
