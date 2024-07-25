@@ -1,16 +1,18 @@
 {...}: {
   programs.nixvim = {
     plugins.neo-tree = {
-      enable = true;
+      enable = false;
       autoCleanAfterSessionRestore = true;
     };
 
+    /*
     keymaps = [
-      {
-        key = "<leader>e";
-        action = "<cmd>Neotree reveal toggle<CR>";
-        options = {desc = "Open Neotree";};
-      }
+    {
+    key = "<leader>e";
+    action = "<cmd>Neotree reveal toggle<CR>";
+    options = {desc = "Open Neotree";};
+    }
     ];
+    */
   };
 }
