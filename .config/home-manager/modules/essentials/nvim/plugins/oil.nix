@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   programs.nixvim = {
     plugins.oil = {
       enable = true;
@@ -16,6 +16,12 @@
         '';
       };
 
+      columns = {
+        icon = {
+          enable = true;
+        };
+      };
+
       winOptions = {
         wrap = true;
       };
@@ -23,9 +29,13 @@
       keymaps = {
         "<C-c>" = false;
         "q" = "actions.close";
-        "t" = "actions.select";
+        "f" = "actions.select";
       };
     };
+
+    extraPlugins = with pkgs.vimPlugins; [
+      nvim-web-devicons
+    ];
 
     keymaps = [
       {
