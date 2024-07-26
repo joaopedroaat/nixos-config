@@ -9,6 +9,7 @@
     ./openssl.nix
     ./aws.nix
     ./beekeeper.nix
+    ./make.nix
   ];
 
   options.development.enable = lib.mkEnableOption "Development";
@@ -18,5 +19,6 @@
     openssl.enable = true;
     aws.enable = true;
     beekeeper.enable = true;
+    make.enable = true;
   };
 }
