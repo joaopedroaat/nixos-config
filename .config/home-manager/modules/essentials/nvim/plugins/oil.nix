@@ -29,7 +29,7 @@
       keymaps = {
         "<C-c>" = false;
         "q" = "actions.close";
-        "f" = "actions.select";
+        "L" = "actions.select";
       };
     };
 
@@ -41,7 +41,7 @@
       {
         key = "-";
         action = "<cmd>Oil<CR>";
-        options = {desc = "Oil parent directory";};
+        options = {desc = "Oil";};
       }
     ];
   };

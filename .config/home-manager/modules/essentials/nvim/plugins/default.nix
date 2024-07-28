@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./flash.nix
     ./devicons.nix
     ./completions.nix
     ./conform.nix
