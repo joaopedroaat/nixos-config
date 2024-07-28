@@ -47,6 +47,10 @@
           action = "help_tags";
           desc = "Find Help";
         };
+        "<leader>fk" = {
+          action = "keymaps";
+          desc = "Find Keymaps";
+        };
       };
     };
 
