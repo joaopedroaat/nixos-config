@@ -192,10 +192,10 @@ in {
         bind = [
           # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
           "$mainMod, RETURN, exec, $terminal"
-          "$mainMod SHIFT, C, exec, $locker" # SUPER + SHIFT + _
+          "$mainMod SHIFT, C, exec, $locker"
           "$mainMod SHIFT, Q, killactive"
           "$mainMod SHIFT, E, exit"
-          "$mainMod, F, exec, $fileManager"
+          "$mainMod, Z, exec, $fileManager"
           "$mainMod SHIFT, SPACE, togglefloating"
 
           # ROFI
@@ -205,13 +205,18 @@ in {
           "$mainMod SHIFT, code:135, exec, $menu_run"
           "$mainMod, SPACE, exec, $menu_windows"
 
-          "$mainMod, P, pseudo, # dwindle"
-          "$mainMod, T, togglesplit, # dwindle"
+          # Screen layout
+          "$mainMod, P, pseudo"
+          "$mainMod, T, togglesplit"
+          "$mainMod, F, fullscreen"
+
           # Printscreen
           "$mainMod, TAB, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\""
           "$mainMod SHIFT, TAB, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | wl-copy" # Goes to clipboard
+
           # 1Password
           "$mainMod, code:51, exec, $passwordManager"
+
           # Calendar
           "$mainMod, C,exec, $calendar"
 
