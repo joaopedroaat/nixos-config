@@ -85,6 +85,7 @@
   office.enable = true;
   sync.enable = true;
   bluetooth.enable = true;
+  grapejuice.enable = true;
 
   # Run unpatched dynamic binaries on NixOS.
   programs.nix-ld = {
