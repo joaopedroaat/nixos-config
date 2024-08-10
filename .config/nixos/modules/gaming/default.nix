@@ -13,5 +13,6 @@
   config = lib.mkIf config.gaming.enable {
     steam.enable = true;
     lutris.enable = true;
+    grapejuice.enable = true;
   };
 }
