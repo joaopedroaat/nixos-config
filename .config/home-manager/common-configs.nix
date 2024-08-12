@@ -8,7 +8,7 @@
   };
 
   home.shellAliases = {
-    dev = "nix develop";
+    dev = "nix develop -c zsh";
   };
 
   xdg = {

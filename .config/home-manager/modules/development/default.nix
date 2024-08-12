@@ -10,6 +10,7 @@
     ./aws.nix
     ./beekeeper.nix
     ./make.nix
+    ./direnv.nix
   ];
 
   options.development.enable = lib.mkEnableOption "Development";
@@ -20,5 +21,6 @@
     aws.enable = true;
     beekeeper.enable = true;
     make.enable = true;
+    direnv.enable = true;
   };
 }
